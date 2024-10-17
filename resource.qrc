@@ -1,0 +1,32 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>res/icon/ic_file.svg</file>
+        <file>res/icon/bell.png</file>
+        <file>res/icon/profile.png</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file>res/font/roboto.ttf</file>
+        <file>res/font/roboto_black.ttf</file>
+        <file>res/font/roboto_black_italic.ttf</file>
+        <file>res/font/roboto_bold.ttf</file>
+        <file>res/font/roboto_bold_italic.ttf</file>
+        <file>res/font/roboto_condensed_bold.ttf</file>
+        <file>res/font/roboto_condensed_bold_italic.ttf</file>
+        <file>res/font/roboto_condensed_light.ttf</file>
+        <file>res/font/roboto_condensed_light_italic.ttf</file>
+        <file>res/font/roboto_condensed_regular.ttf</file>
+        <file>res/font/roboto_condensed_regular_italic.ttf</file>
+        <file>res/font/roboto_italic.ttf</file>
+        <file>res/font/roboto_light.ttf</file>
+        <file>res/font/roboto_light_italic.ttf</file>
+        <file>res/font/roboto_medium.ttf</file>
+        <file>res/font/roboto_medium_italic.ttf</file>
+        <file>res/font/roboto_thin.ttf</file>
+        <file>res/font/roboto_thin_italic.ttf</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>res/image/digital-library.png</file>
+        <file>res/image/ic_e-library.png</file>
+        <file>res/image/menu.png</file>
+    </qresource>
+</RCC>
