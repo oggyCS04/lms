@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPushButton>
+#include <QFrame>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,7 +19,17 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void onMenuButtonClicked(int index);
+
+    void on_addCategoryBtn_clicked();
+
+    void on_manageCategoryBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
+    QPushButton* createMenuButton(const QString &iconPath, const QString &text, int index);
+
+void applyDropShadow(QFrame*);
 };
 #endif // MAINWINDOW_H

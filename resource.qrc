@@ -1,8 +1,15 @@
 <RCC>
     <qresource prefix="/icons">
-        <file>res/icon/ic_file.svg</file>
         <file>res/icon/bell.png</file>
         <file>res/icon/profile.png</file>
+        <file>res/icon/book-issue.png</file>
+        <file>res/icon/book-request.png</file>
+        <file>res/icon/books.png</file>
+        <file>res/icon/category.png</file>
+        <file>res/icon/dashboard.png</file>
+        <file>res/icon/publication.png</file>
+        <file>res/icon/reg-student.png</file>
+        <file>res/icon/report.png</file>
     </qresource>
     <qresource prefix="/fonts">
         <file>res/font/roboto.ttf</file>
@@ -28,5 +35,6 @@
         <file>res/image/digital-library.png</file>
         <file>res/image/ic_e-library.png</file>
         <file>res/image/menu.png</file>
+        <file>res/image/e-library.png</file>
     </qresource>
 </RCC>
