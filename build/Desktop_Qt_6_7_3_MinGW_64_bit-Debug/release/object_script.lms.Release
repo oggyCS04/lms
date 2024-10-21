@@ -1,0 +1,12 @@
+release/booksfragment.o
+release/categoryfragment.o
+release/databaseconnector.o
+release/loginpage.o
+release/main.o
+release/mainwindow.o
+release/qrc_resource.o
+release/qrc_resource2.o
+release/moc_booksfragment.o
+release/moc_categoryfragment.o
+release/moc_loginpage.o
+release/moc_mainwindow.o

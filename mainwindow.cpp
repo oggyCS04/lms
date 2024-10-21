@@ -1,9 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
 #include <QPushButton>
 #include <QDebug>
 #include <QGraphicsDropShadowEffect>
 #include <QFrame>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -41,15 +43,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->sidebar_vlayout->setAlignment(regBtn,Qt::AlignHCenter);
     ui->sidebar_vlayout->setAlignment(reportBtn,Qt::AlignHCenter);
 
-
     ui->stackedWidget->setCurrentIndex(0);
-    ui->category_stackedWidget->setCurrentIndex(0);
 
-    applyDropShadow(ui->frame);
-    applyDropShadow(ui->frame_2);
-    applyDropShadow(ui->frame_3);
-    applyDropShadow(ui->frame_4);
+    categoryWidget = new CategoryFragment(this);
+    bookWidget = new BookFragment(this);
 
+    ui->categoryGL->addWidget(categoryWidget);
+    ui->booksGL->addWidget(bookWidget);
 
 }
 
@@ -92,22 +92,10 @@ void MainWindow::onMenuButtonClicked(int index) {
     ui->stackedWidget->setCurrentIndex(index);
 }
 
-
-void MainWindow::on_addCategoryBtn_clicked()
-{
-    ui->category_stackedWidget->setCurrentIndex(0);
-}
-
-
-void MainWindow::on_manageCategoryBtn_clicked()
-{
-    ui->category_stackedWidget->setCurrentIndex(1);
-}
-
-void MainWindow::applyDropShadow(QFrame* frame){
-    QGraphicsDropShadowEffect *shadow = new QGraphicsDropShadowEffect;
-    shadow->setBlurRadius(20);
-    shadow->setOffset(0, 0);
-    shadow->setColor(Qt::lightGray);
-    frame->setGraphicsEffect(shadow);
-}
+// void MainWindow::applyDropShadow(QFrame* frame){
+//     QGraphicsDropShadowEffect *shadow = new QGraphicsDropShadowEffect;
+//     shadow->setBlurRadius(20);
+//     shadow->setOffset(0, 0);
+//     shadow->setColor(Qt::lightGray);
+//     frame->setGraphicsEffect(shadow);
+// }
