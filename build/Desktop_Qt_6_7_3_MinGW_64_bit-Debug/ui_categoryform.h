@@ -52,10 +52,10 @@ public:
     QPushButton *categoryDataBtn;
     QWidget *manageCategoryWidget;
     QGridLayout *gridLayout_2;
-    QScrollArea *scrollArea_2;
-    QWidget *scrollAreaWidgetContents_2;
+    QScrollArea *manageCatScrollArea;
+    QWidget *manageCatContents;
     QGridLayout *gridLayout_3;
-    QWidget *widget_2;
+    QWidget *manageCatWidget;
     QVBoxLayout *verticalLayout_5;
     QLabel *label;
     QHBoxLayout *horizontalLayout_7;
@@ -81,6 +81,7 @@ public:
 "background-color: rgb(243, 244, 248);\n"
 "}"));
         categoryFragmentVL = new QVBoxLayout(CategoryFragment);
+        categoryFragmentVL->setSpacing(0);
         categoryFragmentVL->setObjectName("categoryFragmentVL");
         categoryFragmentVL->setContentsMargins(0, 0, 0, 0);
         category_header = new QWidget(CategoryFragment);
@@ -93,7 +94,7 @@ public:
         category_header->setMinimumSize(QSize(0, 64));
         category_header->setMaximumSize(QSize(16777215, 64));
         category_header->setStyleSheet(QString::fromUtf8("QWidget{\n"
-"border-bottom: 1px solid rgb(172, 172, 172);\n"
+"border-bottom: 1px solid lightgray;\n"
 "}\n"
 "\n"
 "QPushButton{\n"
@@ -183,15 +184,6 @@ public:
 "padding-left: 12px;\n"
 "}\n"
 "\n"
-"QLineEdit{\n"
-"color: black;\n"
-"border: 1px solid rgb(172, 172, 172);\n"
-"border-radius: 16px;\n"
-"margin-left: 12px;\n"
-"margin-right: 12px;\n"
-"padding-left: 12px;\n"
-"}\n"
-"\n"
 "QRadioButton{\n"
 "color: black;\n"
 "margin-left: 12px;\n"
@@ -247,6 +239,18 @@ public:
         QFont font3;
         font3.setPointSize(10);
         categoryLE->setFont(font3);
+        categoryLE->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
+"color: black;\n"
+"border: 1px solid rgb(172, 172, 172);\n"
+"border-radius: 16px;\n"
+"margin-left: 12px;\n"
+"margin-right: 12px;\n"
+"padding-left: 12px;\n"
+"}\n"
+"\n"
+"QLineEdit:hover{\n"
+"border-color: rgb(91, 192, 222);\n"
+"}"));
 
         verticalLayout_4->addWidget(categoryLE);
 
@@ -391,45 +395,65 @@ public:
         gridLayout_2->setSpacing(0);
         gridLayout_2->setObjectName("gridLayout_2");
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        scrollArea_2 = new QScrollArea(manageCategoryWidget);
-        scrollArea_2->setObjectName("scrollArea_2");
-        scrollArea_2->setWidgetResizable(true);
-        scrollAreaWidgetContents_2 = new QWidget();
-        scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 1006, 594));
-        gridLayout_3 = new QGridLayout(scrollAreaWidgetContents_2);
+        manageCatScrollArea = new QScrollArea(manageCategoryWidget);
+        manageCatScrollArea->setObjectName("manageCatScrollArea");
+        manageCatScrollArea->setStyleSheet(QString::fromUtf8(""));
+        manageCatScrollArea->setWidgetResizable(true);
+        manageCatContents = new QWidget();
+        manageCatContents->setObjectName("manageCatContents");
+        manageCatContents->setGeometry(QRect(0, 0, 1006, 601));
+        manageCatContents->setStyleSheet(QString::fromUtf8(""));
+        gridLayout_3 = new QGridLayout(manageCatContents);
         gridLayout_3->setObjectName("gridLayout_3");
-        gridLayout_3->setContentsMargins(24, 24, 24, 24);
-        widget_2 = new QWidget(scrollAreaWidgetContents_2);
-        widget_2->setObjectName("widget_2");
-        widget_2->setStyleSheet(QString::fromUtf8("color: black;\n"
+        gridLayout_3->setContentsMargins(48, 48, 48, 48);
+        manageCatWidget = new QWidget(manageCatContents);
+        manageCatWidget->setObjectName("manageCatWidget");
+        manageCatWidget->setStyleSheet(QString::fromUtf8("QWidget{\n"
+"color: rgb(0, 0, 0);\n"
+"border: 1px solid lightgray;\n"
+"border-radius: 12px;\n"
+"}\n"
+"\n"
 ""));
-        verticalLayout_5 = new QVBoxLayout(widget_2);
+        verticalLayout_5 = new QVBoxLayout(manageCatWidget);
         verticalLayout_5->setSpacing(0);
         verticalLayout_5->setObjectName("verticalLayout_5");
         verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(widget_2);
+        label = new QLabel(manageCatWidget);
         label->setObjectName("label");
         sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy);
-        label->setMinimumSize(QSize(0, 36));
-        label->setMaximumSize(QSize(16777215, 36));
-        QFont font6;
-        font6.setPointSize(11);
-        label->setFont(font6);
+        label->setMinimumSize(QSize(0, 48));
+        label->setMaximumSize(QSize(16777215, 48));
+        label->setFont(font);
+        label->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"color: black;\n"
+"background-color: rgb(230, 230, 230);\n"
+"border: 1px solid lightgray;\n"
+"padding-left: 12px;\n"
+"border-bottom-left-radius: 0px;\n"
+"border-bottom-right-radius: 0px;\n"
+"}"));
 
         verticalLayout_5->addWidget(label);
 
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setSpacing(8);
         horizontalLayout_7->setObjectName("horizontalLayout_7");
-        spinBox = new QSpinBox(widget_2);
+        horizontalLayout_7->setContentsMargins(8, 8, 8, 8);
+        spinBox = new QSpinBox(manageCatWidget);
         spinBox->setObjectName("spinBox");
         sizePolicy1.setHeightForWidth(spinBox->sizePolicy().hasHeightForWidth());
         spinBox->setSizePolicy(sizePolicy1);
         spinBox->setMinimumSize(QSize(72, 36));
         spinBox->setMaximumSize(QSize(72, 36));
+        QFont font6;
+        font6.setPointSize(11);
         spinBox->setFont(font6);
+        spinBox->setStyleSheet(QString::fromUtf8("\n"
+"border: 1px solid lightgray;\n"
+"border-radius: 8px;\n"
+""));
         spinBox->setAlignment(Qt::AlignmentFlag::AlignCenter);
         spinBox->setMinimum(25);
         spinBox->setMaximum(100);
@@ -437,9 +461,10 @@ public:
 
         horizontalLayout_7->addWidget(spinBox);
 
-        label_2 = new QLabel(widget_2);
+        label_2 = new QLabel(manageCatWidget);
         label_2->setObjectName("label_2");
         label_2->setFont(font6);
+        label_2->setStyleSheet(QString::fromUtf8("border:none;"));
 
         horizontalLayout_7->addWidget(label_2);
 
@@ -447,25 +472,32 @@ public:
 
         horizontalLayout_7->addItem(horizontalSpacer_5);
 
-        label_5 = new QLabel(widget_2);
+        label_5 = new QLabel(manageCatWidget);
         label_5->setObjectName("label_5");
         label_5->setFont(font6);
+        label_5->setStyleSheet(QString::fromUtf8("border:none;"));
 
         horizontalLayout_7->addWidget(label_5);
 
-        lineEdit = new QLineEdit(widget_2);
+        lineEdit = new QLineEdit(manageCatWidget);
         lineEdit->setObjectName("lineEdit");
         sizePolicy1.setHeightForWidth(lineEdit->sizePolicy().hasHeightForWidth());
         lineEdit->setSizePolicy(sizePolicy1);
         lineEdit->setMinimumSize(QSize(200, 36));
         lineEdit->setMaximumSize(QSize(200, 36));
+        lineEdit->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
+"border: 1px solid lightgray;\n"
+"border-radius: 8px;\n"
+"padding-left: 12px;\n"
+"color: rgb(79, 79, 79);\n"
+"}"));
 
         horizontalLayout_7->addWidget(lineEdit);
 
 
         verticalLayout_5->addLayout(horizontalLayout_7);
 
-        tableWidget = new QTableWidget(widget_2);
+        tableWidget = new QTableWidget(manageCatWidget);
         if (tableWidget->columnCount() < 6)
             tableWidget->setColumnCount(6);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
@@ -493,10 +525,30 @@ public:
         sizePolicy3.setHeightForWidth(tableWidget->sizePolicy().hasHeightForWidth());
         tableWidget->setSizePolicy(sizePolicy3);
         tableWidget->setFont(font6);
+        tableWidget->setStyleSheet(QString::fromUtf8("QHeaderView{\n"
+"border: none;\n"
+"border-radius:0px;\n"
+"border-bottom: 1px solid lightgray;\n"
+"min-height: 36px;\n"
+"}\n"
+"\n"
+"QHeaderView::section{\n"
+"\n"
+"	background-color: rgb(243, 244, 248);\n"
+"border:none;\n"
+"border-right: 1px solid lightgray;\n"
+"}\n"
+"\n"
+"QTableWidget{\n"
+"border-radius: 0px;\n"
+"}"));
+        tableWidget->setLineWidth(1);
+        tableWidget->setMidLineWidth(0);
         tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
         tableWidget->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
         tableWidget->setTextElideMode(Qt::TextElideMode::ElideRight);
         tableWidget->setShowGrid(true);
+        tableWidget->setGridStyle(Qt::PenStyle::SolidLine);
         tableWidget->setWordWrap(true);
         tableWidget->setCornerButtonEnabled(true);
         tableWidget->horizontalHeader()->setVisible(true);
@@ -506,20 +558,25 @@ public:
         tableWidget->horizontalHeader()->setHighlightSections(false);
         tableWidget->horizontalHeader()->setProperty("showSortIndicator", QVariant(false));
         tableWidget->horizontalHeader()->setStretchLastSection(true);
+        tableWidget->verticalHeader()->setVisible(false);
+        tableWidget->verticalHeader()->setMinimumSectionSize(36);
+        tableWidget->verticalHeader()->setDefaultSectionSize(36);
         tableWidget->verticalHeader()->setStretchLastSection(false);
 
         verticalLayout_5->addWidget(tableWidget);
 
         horizontalLayout_8 = new QHBoxLayout();
-        horizontalLayout_8->setSpacing(8);
+        horizontalLayout_8->setSpacing(0);
         horizontalLayout_8->setObjectName("horizontalLayout_8");
-        label_6 = new QLabel(widget_2);
+        horizontalLayout_8->setContentsMargins(8, 8, 8, 8);
+        label_6 = new QLabel(manageCatWidget);
         label_6->setObjectName("label_6");
         sizePolicy.setHeightForWidth(label_6->sizePolicy().hasHeightForWidth());
         label_6->setSizePolicy(sizePolicy);
         label_6->setMinimumSize(QSize(0, 36));
         label_6->setMaximumSize(QSize(16777215, 36));
         label_6->setFont(font6);
+        label_6->setStyleSheet(QString::fromUtf8("border:none;"));
 
         horizontalLayout_8->addWidget(label_6);
 
@@ -527,29 +584,64 @@ public:
 
         horizontalLayout_8->addItem(horizontalSpacer_6);
 
-        pushButton = new QPushButton(widget_2);
+        pushButton = new QPushButton(manageCatWidget);
         pushButton->setObjectName("pushButton");
         pushButton->setMinimumSize(QSize(0, 36));
         pushButton->setMaximumSize(QSize(16777215, 36));
         pushButton->setFont(font6);
+        pushButton->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"color: black;\n"
+"border: 1px solid lightgray;\n"
+"border-top-right-radius: 0px;\n"
+"border-bottom-right-radius:0px;\n"
+"padding-left: 8px;\n"
+"padding-right: 8px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"border: 1px solid black;\n"
+"}"));
 
         horizontalLayout_8->addWidget(pushButton);
 
-        label_7 = new QLabel(widget_2);
+        label_7 = new QLabel(manageCatWidget);
         label_7->setObjectName("label_7");
-        sizePolicy.setHeightForWidth(label_7->sizePolicy().hasHeightForWidth());
-        label_7->setSizePolicy(sizePolicy);
-        label_7->setMinimumSize(QSize(0, 36));
-        label_7->setMaximumSize(QSize(16777215, 36));
+        sizePolicy1.setHeightForWidth(label_7->sizePolicy().hasHeightForWidth());
+        label_7->setSizePolicy(sizePolicy1);
+        label_7->setMinimumSize(QSize(32, 36));
+        label_7->setMaximumSize(QSize(32, 36));
         label_7->setFont(font6);
+        label_7->setStyleSheet(QString::fromUtf8("QLabel{\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"border: 1px solid black;\n"
+"border-radius: 0px;\n"
+"}"));
+        label_7->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         horizontalLayout_8->addWidget(label_7);
 
-        pushButton_2 = new QPushButton(widget_2);
+        pushButton_2 = new QPushButton(manageCatWidget);
         pushButton_2->setObjectName("pushButton_2");
         pushButton_2->setMinimumSize(QSize(0, 36));
         pushButton_2->setMaximumSize(QSize(16777215, 36));
         pushButton_2->setFont(font6);
+        pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"color: black;\n"
+"border: 1px solid lightgray;\n"
+"border-top-left-radius: 0px;\n"
+"border-bottom-left-radius:0px;\n"
+"padding-left: 8px;\n"
+"padding-right: 8px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(0, 0, 0);\n"
+"border: 1px solid black;\n"
+"}"));
 
         horizontalLayout_8->addWidget(pushButton_2);
 
@@ -557,11 +649,11 @@ public:
         verticalLayout_5->addLayout(horizontalLayout_8);
 
 
-        gridLayout_3->addWidget(widget_2, 0, 0, 1, 1);
+        gridLayout_3->addWidget(manageCatWidget, 0, 0, 1, 1);
 
-        scrollArea_2->setWidget(scrollAreaWidgetContents_2);
+        manageCatScrollArea->setWidget(manageCatContents);
 
-        gridLayout_2->addWidget(scrollArea_2, 0, 0, 1, 1);
+        gridLayout_2->addWidget(manageCatScrollArea, 0, 0, 1, 1);
 
         category_stackedWidget->addWidget(manageCategoryWidget);
 

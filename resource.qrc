@@ -10,6 +10,24 @@
         <file>res/icon/publication.png</file>
         <file>res/icon/reg-student.png</file>
         <file>res/icon/report.png</file>
+        <file>res/icon/dashboard-black.png</file>
+        <file>res/icon/publication-black.png</file>
+        <file>res/icon/book-black.png</file>
+        <file>res/icon/dashboard2-black.png</file>
+        <file>res/icon/reg-student-black.png</file>
+        <file>res/icon/book2-black.png</file>
+        <file>res/icon/book-issue-black.png</file>
+        <file>res/icon/book-request-black.png</file>
+        <file>res/icon/category-black.png</file>
+        <file>res/icon/report-black.png</file>
+        <file>res/icon/category-white.png</file>
+        <file>res/icon/dashboard-white.png</file>
+        <file>res/icon/publication-white.png</file>
+        <file>res/icon/book-issue-white.png</file>
+        <file>res/icon/book-white.png</file>
+        <file>res/icon/register-white.png</file>
+        <file>res/icon/report-white.png</file>
+        <file>res/icon/request-white.png</file>
     </qresource>
     <qresource prefix="/fonts">
         <file>res/font/roboto.ttf</file>

@@ -1,5 +1,5 @@
-#ifndef BOOKSFRAGMENT_H
-#define BOOKSFRAGMENT_H
+#ifndef BOOKFRAGMENT_H
+#define BOOKFRAGMENT_H
 
 #include <QWidget>
 
@@ -19,4 +19,4 @@ private:
     Ui::BookFragment *ui;
 };
 
-#endif // BOOKSFRAGMENT_H
+#endif // BOOKFRAGMENT_H

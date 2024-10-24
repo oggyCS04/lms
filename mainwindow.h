@@ -1,9 +1,10 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include "booksfragment.h"
+#include "dashboardfragment.h"
+#include "bookfragment.h"
 #include "categoryfragment.h"
-#include "databaseconnector.h"
+#include "publicationfragment.h"
 
 #include <QMainWindow>
 #include <QPushButton>
@@ -28,10 +29,14 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    BookFragment *bookWidget;
-    CategoryFragment *categoryWidget;
-    QPushButton* createMenuButton(const QString &iconPath, const QString &text, int index);
 
-    // void applyDropShadow(QFrame*);
+    DashboardFragment *dashboardWidget;
+    CategoryFragment *categoryWidget;
+    PublicationFragment *publicationWidget;
+    BookFragment *bookWidget;
+
+    void applyDropShadow(QWidget*);
+
+    // QPushButton* createMenuButton(const QString &iconPath, const QString &text, int index);
 };
 #endif // MAINWINDOW_H

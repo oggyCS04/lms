@@ -9,25 +9,34 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    booksfragment.cpp \
+    bookfragment.cpp \
     categoryfragment.cpp \
+    dashboardfragment.cpp \
     databaseconnector.cpp \
+    insightframe.cpp \
     loginpage.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    publicationfragment.cpp
 
 HEADERS += \
-    booksfragment.h \
+    bookfragment.h \
     categoryfragment.h \
+    dashboardfragment.h \
     databaseconnector.h \
+    insightframe.h \
     loginpage.h \
-    mainwindow.h
+    mainwindow.h \
+    publicationfragment.h
 
 FORMS += \
     bookform.ui \
     categoryform.ui \
+    dashboardform.ui \
+    insightframe.ui \
     loginpage.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    publicationform.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

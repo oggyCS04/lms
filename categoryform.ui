@@ -19,6 +19,9 @@ background-color: rgb(243, 244, 248);
 }</string>
   </property>
   <layout class="QVBoxLayout" name="categoryFragmentVL">
+   <property name="spacing">
+    <number>0</number>
+   </property>
    <property name="leftMargin">
     <number>0</number>
    </property>
@@ -53,7 +56,7 @@ background-color: rgb(243, 244, 248);
      </property>
      <property name="styleSheet">
       <string notr="true">QWidget{
-border-bottom: 1px solid rgb(172, 172, 172);
+border-bottom: 1px solid lightgray;
 }
 
 QPushButton{
@@ -207,15 +210,6 @@ border-bottom-right-radius: 0px;
 padding-left: 12px;
 }
 
-QLineEdit{
-color: black;
-border: 1px solid rgb(172, 172, 172);
-border-radius: 16px;
-margin-left: 12px;
-margin-right: 12px;
-padding-left: 12px;
-}
-
 QRadioButton{
 color: black;
 margin-left: 12px;
@@ -339,6 +333,20 @@ border-bottom: 1px solid  rgb(188, 232, 241);
              <font>
               <pointsize>10</pointsize>
              </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QLineEdit{
+color: black;
+border: 1px solid rgb(172, 172, 172);
+border-radius: 16px;
+margin-left: 12px;
+margin-right: 12px;
+padding-left: 12px;
+}
+
+QLineEdit:hover{
+border-color: rgb(91, 192, 222);
+}</string>
             </property>
            </widget>
           </item>
@@ -953,36 +961,47 @@ border-radius: 16px;
         <number>0</number>
        </property>
        <item row="0" column="0">
-        <widget class="QScrollArea" name="scrollArea_2">
+        <widget class="QScrollArea" name="manageCatScrollArea">
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
          <property name="widgetResizable">
           <bool>true</bool>
          </property>
-         <widget class="QWidget" name="scrollAreaWidgetContents_2">
+         <widget class="QWidget" name="manageCatContents">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
             <width>1006</width>
-            <height>594</height>
+            <height>601</height>
            </rect>
+          </property>
+          <property name="styleSheet">
+           <string notr="true"/>
           </property>
           <layout class="QGridLayout" name="gridLayout_3">
            <property name="leftMargin">
-            <number>24</number>
+            <number>48</number>
            </property>
            <property name="topMargin">
-            <number>24</number>
+            <number>48</number>
            </property>
            <property name="rightMargin">
-            <number>24</number>
+            <number>48</number>
            </property>
            <property name="bottomMargin">
-            <number>24</number>
+            <number>48</number>
            </property>
            <item row="0" column="0">
-            <widget class="QWidget" name="widget_2" native="true">
+            <widget class="QWidget" name="manageCatWidget" native="true">
              <property name="styleSheet">
-              <string notr="true">color: black;
+              <string notr="true">QWidget{
+color: rgb(0, 0, 0);
+border: 1px solid lightgray;
+border-radius: 12px;
+}
+
 </string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -1012,19 +1031,30 @@ border-radius: 16px;
                 <property name="minimumSize">
                  <size>
                   <width>0</width>
-                  <height>36</height>
+                  <height>48</height>
                  </size>
                 </property>
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>
-                  <height>36</height>
+                  <height>48</height>
                  </size>
                 </property>
                 <property name="font">
                  <font>
                   <pointsize>11</pointsize>
+                  <fontweight>DemiBold</fontweight>
                  </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel{
+color: black;
+background-color: rgb(230, 230, 230);
+border: 1px solid lightgray;
+padding-left: 12px;
+border-bottom-left-radius: 0px;
+border-bottom-right-radius: 0px;
+}</string>
                 </property>
                 <property name="text">
                  <string>Categories Listing</string>
@@ -1034,6 +1064,18 @@ border-radius: 16px;
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_7">
                 <property name="spacing">
+                 <number>8</number>
+                </property>
+                <property name="leftMargin">
+                 <number>8</number>
+                </property>
+                <property name="topMargin">
+                 <number>8</number>
+                </property>
+                <property name="rightMargin">
+                 <number>8</number>
+                </property>
+                <property name="bottomMargin">
                  <number>8</number>
                 </property>
                 <item>
@@ -1061,6 +1103,12 @@ border-radius: 16px;
                     <pointsize>11</pointsize>
                    </font>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">
+border: 1px solid lightgray;
+border-radius: 8px;
+</string>
+                  </property>
                   <property name="alignment">
                    <set>Qt::AlignmentFlag::AlignCenter</set>
                   </property>
@@ -1081,6 +1129,9 @@ border-radius: 16px;
                    <font>
                     <pointsize>11</pointsize>
                    </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border:none;</string>
                   </property>
                   <property name="text">
                    <string>records per page</string>
@@ -1107,6 +1158,9 @@ border-radius: 16px;
                     <pointsize>11</pointsize>
                    </font>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">border:none;</string>
+                  </property>
                   <property name="text">
                    <string>Search :</string>
                   </property>
@@ -1132,6 +1186,14 @@ border-radius: 16px;
                     <height>36</height>
                    </size>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit{
+border: 1px solid lightgray;
+border-radius: 8px;
+padding-left: 12px;
+color: rgb(79, 79, 79);
+}</string>
+                  </property>
                  </widget>
                 </item>
                </layout>
@@ -1149,6 +1211,31 @@ border-radius: 16px;
                   <pointsize>11</pointsize>
                  </font>
                 </property>
+                <property name="styleSheet">
+                 <string notr="true">QHeaderView{
+border: none;
+border-radius:0px;
+border-bottom: 1px solid lightgray;
+min-height: 36px;
+}
+
+QHeaderView::section{
+
+	background-color: rgb(243, 244, 248);
+border:none;
+border-right: 1px solid lightgray;
+}
+
+QTableWidget{
+border-radius: 0px;
+}</string>
+                </property>
+                <property name="lineWidth">
+                 <number>1</number>
+                </property>
+                <property name="midLineWidth">
+                 <number>0</number>
+                </property>
                 <property name="horizontalScrollBarPolicy">
                  <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
                 </property>
@@ -1160,6 +1247,9 @@ border-radius: 16px;
                 </property>
                 <property name="showGrid">
                  <bool>true</bool>
+                </property>
+                <property name="gridStyle">
+                 <enum>Qt::PenStyle::SolidLine</enum>
                 </property>
                 <property name="wordWrap">
                  <bool>true</bool>
@@ -1187,6 +1277,15 @@ border-radius: 16px;
                 </attribute>
                 <attribute name="horizontalHeaderStretchLastSection">
                  <bool>true</bool>
+                </attribute>
+                <attribute name="verticalHeaderVisible">
+                 <bool>false</bool>
+                </attribute>
+                <attribute name="verticalHeaderMinimumSectionSize">
+                 <number>36</number>
+                </attribute>
+                <attribute name="verticalHeaderDefaultSectionSize">
+                 <number>36</number>
                 </attribute>
                 <attribute name="verticalHeaderStretchLastSection">
                  <bool>false</bool>
@@ -1262,6 +1361,18 @@ border-radius: 16px;
               <item>
                <layout class="QHBoxLayout" name="horizontalLayout_8">
                 <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>8</number>
+                </property>
+                <property name="topMargin">
+                 <number>8</number>
+                </property>
+                <property name="rightMargin">
+                 <number>8</number>
+                </property>
+                <property name="bottomMargin">
                  <number>8</number>
                 </property>
                 <item>
@@ -1288,6 +1399,9 @@ border-radius: 16px;
                    <font>
                     <pointsize>11</pointsize>
                    </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">border:none;</string>
                   </property>
                   <property name="text">
                    <string>Showing</string>
@@ -1326,6 +1440,22 @@ border-radius: 16px;
                     <pointsize>11</pointsize>
                    </font>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+color: black;
+border: 1px solid lightgray;
+border-top-right-radius: 0px;
+border-bottom-right-radius:0px;
+padding-left: 8px;
+padding-right: 8px;
+}
+
+QPushButton:hover{
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
+border: 1px solid black;
+}</string>
+                  </property>
                   <property name="text">
                    <string>Previous</string>
                   </property>
@@ -1334,20 +1464,20 @@ border-radius: 16px;
                 <item>
                  <widget class="QLabel" name="label_7">
                   <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>0</width>
+                    <width>32</width>
                     <height>36</height>
                    </size>
                   </property>
                   <property name="maximumSize">
                    <size>
-                    <width>16777215</width>
+                    <width>32</width>
                     <height>36</height>
                    </size>
                   </property>
@@ -1356,8 +1486,19 @@ border-radius: 16px;
                     <pointsize>11</pointsize>
                    </font>
                   </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel{
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
+border: 1px solid black;
+border-radius: 0px;
+}</string>
+                  </property>
                   <property name="text">
                    <string>1</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignmentFlag::AlignCenter</set>
                   </property>
                  </widget>
                 </item>
@@ -1379,6 +1520,22 @@ border-radius: 16px;
                    <font>
                     <pointsize>11</pointsize>
                    </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+color: black;
+border: 1px solid lightgray;
+border-top-left-radius: 0px;
+border-bottom-left-radius:0px;
+padding-left: 8px;
+padding-right: 8px;
+}
+
+QPushButton:hover{
+color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 0);
+border: 1px solid black;
+}</string>
                   </property>
                   <property name="text">
                    <string>Next</string>
