@@ -1,8 +1,39 @@
-![Screenshot 2024-10-24 162507](https://github.com/user-attachments/assets/d66b9e23-60af-482e-9b91-d61ba6a6932f)
-![Screenshot 2024-10-24 162517](https://github.com/user-attachments/assets/b9856763-21de-443d-9696-ecb2881ba86a)
-![Screenshot 2024-10-24 162531](https://github.com/user-attachments/assets/b03c6b32-f559-42a2-ad93-d49dc5662e1b)
-![Screenshot 2024-10-24 162539](https://github.com/user-attachments/assets/09272238-5689-4944-81c0-c1abb791913c)
-![Screenshot 2024-10-24 162551](https://github.com/user-attachments/assets/a6819a57-9398-4302-a2ec-34d14a6017ca)
+Library Management System
+developed by Sagar Gupta
 
-![Screenshot 2024-10-24 163132](https://github.com/user-attachments/assets/7ef2de9d-6de8-49ef-b138-1695e2ee5283)
+Login Page:
+
+![image](https://github.com/user-attachments/assets/6f3d4908-0151-4aa3-acea-bb80a73ecb43)
+
+Admin Panel :
+
+![image](https://github.com/user-attachments/assets/0152b111-371c-4d64-8af6-efdfd7476ceb)
+
+![image](https://github.com/user-attachments/assets/fa526316-6cd1-444d-8065-3bdee9f95953)
+
+![image](https://github.com/user-attachments/assets/cccb2605-3ac5-4605-8a5d-0ad59fbcc62d)
+
+![image](https://github.com/user-attachments/assets/37c34b6e-f10a-4ec1-bda0-8f3f19997aa1)
+
+![image](https://github.com/user-attachments/assets/4d8cb517-24da-4c51-8b39-825a0f0436df)
+
+![image](https://github.com/user-attachments/assets/904853bf-fa62-4e30-9da9-6e62f701862e)
+
+![image](https://github.com/user-attachments/assets/acd55ad8-c4cc-4b8f-8fc1-dc68cff85d86)
+
+![image](https://github.com/user-attachments/assets/ab0151ad-2396-49e5-8ba9-deaeb27a0958)
+
+User Panel :
+
+![image](https://github.com/user-attachments/assets/c1f37cbe-5779-475f-87f8-665314645291)
+
+![image](https://github.com/user-attachments/assets/a25336ce-37c9-4304-828b-48cd03a15e48)
+
+![image](https://github.com/user-attachments/assets/ded06746-a43f-49ee-8027-a8cf5c36f4c4)
+
+![image](https://github.com/user-attachments/assets/71c99b18-0556-41e4-ad09-7b9f56243ce2)
+
+Database:
+
+![image](https://github.com/user-attachments/assets/4da779f6-89a4-4d09-a279-2e042992920f)
 
