@@ -20,6 +20,13 @@ void InsightFrame::setHeaderText(QString txt){
     ui->header->setText(txt);
 }
 
+void InsightFrame::setUserNum(QString num){
+    ui->userNum->setText(num);
+}
+void InsightFrame::setInsightIcon(QString iconpath){
+    ui->InsightIcon->setPixmap(iconpath);
+}
+
 void InsightFrame::applyDropShadow(QWidget* widget){
     QGraphicsDropShadowEffect *shadow = new QGraphicsDropShadowEffect;
     shadow->setBlurRadius(4);

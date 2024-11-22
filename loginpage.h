@@ -22,6 +22,10 @@ public:
 private slots:
     void on_login_btn_clicked();
 
+    void on_adminLogin_clicked();
+
+    void on_userLogin_clicked();
+
 private:
     Ui::LoginPage *ui;
 };

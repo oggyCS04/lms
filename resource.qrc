@@ -28,6 +28,12 @@
         <file>res/icon/register-white.png</file>
         <file>res/icon/report-white.png</file>
         <file>res/icon/request-white.png</file>
+        <file>res/icon/arrow-down.png</file>
+        <file>res/icon/arrow-up.png</file>
+        <file>res/icon/edit-bold.png</file>
+        <file>res/icon/delete-bold.png</file>
+        <file>res/icon/overdue.png</file>
+        <file>res/icon/team.png</file>
     </qresource>
     <qresource prefix="/fonts">
         <file>res/font/roboto.ttf</file>

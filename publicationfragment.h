@@ -1,6 +1,8 @@
 #ifndef PUBLICATIONFRAGMENT_H
 #define PUBLICATIONFRAGMENT_H
 
+#include "databaseconnector.h"
+
 #include <QWidget>
 
 namespace Ui {
@@ -14,11 +16,13 @@ class PublicationFragment : public QWidget
 public:
     explicit PublicationFragment(QWidget *parent = nullptr);
     ~PublicationFragment();
+    void loadData();
 
 private slots:
-    void on_addPubBtn_clicked();
 
-    void on_managePubBtn_clicked();
+    void on_addPublicationBtn_clicked();
+    void onEditBtnClicked(int index1);
+    void onDeleteBtnClicked(int index2);
 
 private:
     Ui::PublicationFragment *ui;

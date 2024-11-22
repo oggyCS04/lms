@@ -1036,7 +1036,7 @@ color: white;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(243, 244, 248);</string>
+        <string notr="true"/>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
         <property name="spacing">
@@ -1147,7 +1147,24 @@ border: 1px solid rgb(236, 236, 236);
             </widget>
            </item>
            <item>
-            <spacer name="horizontalSpacer">
+            <widget class="QLabel" name="title_label">
+             <property name="font">
+              <font>
+               <family>Poppins</family>
+               <pointsize>14</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(0, 0, 0);</string>
+             </property>
+             <property name="text">
+              <string>Dashboard</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_1">
              <property name="orientation">
               <enum>Qt::Orientation::Horizontal</enum>
              </property>
@@ -1393,12 +1410,10 @@ color: rgb(86, 86, 86);
         <item>
          <widget class="QStackedWidget" name="stackedWidget">
           <property name="styleSheet">
-           <string notr="true">QWidget{
-background-color: rgb(243, 244, 248);
-}</string>
+           <string notr="true"/>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>7</number>
           </property>
           <widget class="QWidget" name="dashboard">
            <property name="styleSheet">
@@ -1478,6 +1493,79 @@ background-color: rgb(243, 244, 248);
              <number>0</number>
             </property>
             <property name="spacing">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="book_issue">
+           <layout class="QVBoxLayout" name="bookIssueVL">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="book_request">
+           <layout class="QVBoxLayout" name="bookReqVL">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="reg_stud">
+           <layout class="QVBoxLayout" name="regStudVL">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="report">
+           <layout class="QVBoxLayout" name="reportVL">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
              <number>0</number>
             </property>
            </layout>

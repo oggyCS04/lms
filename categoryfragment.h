@@ -1,8 +1,6 @@
 #ifndef CATEGORYFRAGMENT_H
 #define CATEGORYFRAGMENT_H
 
-#include "databaseconnector.h"
-
 #include <QWidget>
 
 namespace Ui {
@@ -16,17 +14,16 @@ class CategoryFragment : public QWidget
 public:
     explicit CategoryFragment(QWidget *parent = nullptr);
     ~CategoryFragment();
+    void loadData();
 
 private slots:
+
     void on_addCategoryBtn_clicked();
-
-    void on_manageCategoryBtn_clicked();
-
-    void on_categoryDataBtn_clicked();
+    void onEditBtnClicked(int index1);
+    void onDeleteBtnClicked(int index2);
 
 private:
     Ui::CategoryFragment *ui;
-    DatabaseConnector dbConnector;
 };
 
 #endif // CATEGORYFRAGMENT_H

@@ -10,6 +10,7 @@
 #define UI_LOGINPAGE_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
@@ -18,6 +19,7 @@
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -28,44 +30,54 @@ class Ui_LoginPage
 public:
     QWidget *centralwidget;
     QHBoxLayout *horizontalLayout;
-    QWidget *widget;
+    QWidget *leftWidget;
     QGridLayout *gridLayout;
     QWidget *widget_3;
     QVBoxLayout *verticalLayout;
     QFrame *frame;
     QLabel *label;
-    QWidget *widget_2;
-    QGridLayout *gridLayout_2;
-    QWidget *widget_4;
+    QWidget *rightWidget;
+    QVBoxLayout *rightWidgetVL;
+    QSpacerItem *verticalSpacer;
+    QWidget *loginOptWidget;
+    QHBoxLayout *loginOptHL;
+    QPushButton *adminLogin;
+    QPushButton *userLogin;
+    QWidget *loginWidget;
     QVBoxLayout *login_layout;
     QLabel *login_title;
     QLineEdit *username_le;
     QLineEdit *password_le;
     QPushButton *login_btn;
+    QSpacerItem *verticalSpacer_2;
 
     void setupUi(QMainWindow *LoginPage)
     {
         if (LoginPage->objectName().isEmpty())
             LoginPage->setObjectName("LoginPage");
         LoginPage->resize(1082, 769);
+        QIcon icon;
+        icon.addFile(QString::fromUtf8(":/images/res/image/e-library.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        LoginPage->setWindowIcon(icon);
+        LoginPage->setIconSize(QSize(24, 24));
         centralwidget = new QWidget(LoginPage);
         centralwidget->setObjectName("centralwidget");
         horizontalLayout = new QHBoxLayout(centralwidget);
         horizontalLayout->setSpacing(0);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        widget = new QWidget(centralwidget);
-        widget->setObjectName("widget");
-        widget->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
-        widget->setAutoFillBackground(false);
-        widget->setStyleSheet(QString::fromUtf8("QWidget{\n"
+        leftWidget = new QWidget(centralwidget);
+        leftWidget->setObjectName("leftWidget");
+        leftWidget->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
+        leftWidget->setAutoFillBackground(false);
+        leftWidget->setStyleSheet(QString::fromUtf8("QWidget{\n"
 "background-color: rgb(255, 255, 255);\n"
 "}"));
-        gridLayout = new QGridLayout(widget);
+        gridLayout = new QGridLayout(leftWidget);
         gridLayout->setSpacing(0);
         gridLayout->setObjectName("gridLayout");
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        widget_3 = new QWidget(widget);
+        widget_3 = new QWidget(leftWidget);
         widget_3->setObjectName("widget_3");
         QSizePolicy sizePolicy(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
         sizePolicy.setHorizontalStretch(0);
@@ -109,45 +121,111 @@ public:
         gridLayout->addWidget(widget_3, 0, 0, 1, 1);
 
 
-        horizontalLayout->addWidget(widget);
+        horizontalLayout->addWidget(leftWidget);
 
-        widget_2 = new QWidget(centralwidget);
-        widget_2->setObjectName("widget_2");
+        rightWidget = new QWidget(centralwidget);
+        rightWidget->setObjectName("rightWidget");
         QSizePolicy sizePolicy1(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(widget_2->sizePolicy().hasHeightForWidth());
-        widget_2->setSizePolicy(sizePolicy1);
-        widget_2->setStyleSheet(QString::fromUtf8("QWidget{\n"
+        sizePolicy1.setHeightForWidth(rightWidget->sizePolicy().hasHeightForWidth());
+        rightWidget->setSizePolicy(sizePolicy1);
+        rightWidget->setStyleSheet(QString::fromUtf8("QWidget{\n"
 "background-color: rgb(243, 244, 248);\n"
+"}\n"
+"\n"
+"QPushButton{\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(10, 36, 86);\n"
+"border: 1px solid rgb(10, 36, 86);\n"
+"border-radius: 4px;\n"
+"padding-left: 8px;\n"
+"padding-right: 8px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(8, 29, 69);\n"
+"border: 1px solid rgb(8, 29, 69);\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: red;\n"
+"border: 1px solid rgb(8, 29, 69);\n"
+"border-radius: 4px;\n"
 "}"));
-        gridLayout_2 = new QGridLayout(widget_2);
-        gridLayout_2->setSpacing(0);
-        gridLayout_2->setObjectName("gridLayout_2");
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        widget_4 = new QWidget(widget_2);
-        widget_4->setObjectName("widget_4");
-        sizePolicy.setHeightForWidth(widget_4->sizePolicy().hasHeightForWidth());
-        widget_4->setSizePolicy(sizePolicy);
-        widget_4->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
+        rightWidgetVL = new QVBoxLayout(rightWidget);
+        rightWidgetVL->setSpacing(24);
+        rightWidgetVL->setObjectName("rightWidgetVL");
+        rightWidgetVL->setContentsMargins(0, 0, 0, 0);
+        verticalSpacer = new QSpacerItem(20, 224, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        rightWidgetVL->addItem(verticalSpacer);
+
+        loginOptWidget = new QWidget(rightWidget);
+        loginOptWidget->setObjectName("loginOptWidget");
+        sizePolicy.setHeightForWidth(loginOptWidget->sizePolicy().hasHeightForWidth());
+        loginOptWidget->setSizePolicy(sizePolicy);
+        loginOptHL = new QHBoxLayout(loginOptWidget);
+        loginOptHL->setSpacing(12);
+        loginOptHL->setObjectName("loginOptHL");
+        loginOptHL->setContentsMargins(0, 0, 0, 0);
+        adminLogin = new QPushButton(loginOptWidget);
+        adminLogin->setObjectName("adminLogin");
+        sizePolicy.setHeightForWidth(adminLogin->sizePolicy().hasHeightForWidth());
+        adminLogin->setSizePolicy(sizePolicy);
+        adminLogin->setMinimumSize(QSize(0, 36));
+        adminLogin->setMaximumSize(QSize(16777215, 36));
+        QFont font1;
+        font1.setPointSize(11);
+        font1.setWeight(QFont::DemiBold);
+        adminLogin->setFont(font1);
+        adminLogin->setCheckable(true);
+        adminLogin->setChecked(true);
+        adminLogin->setAutoExclusive(true);
+
+        loginOptHL->addWidget(adminLogin);
+
+        userLogin = new QPushButton(loginOptWidget);
+        userLogin->setObjectName("userLogin");
+        sizePolicy.setHeightForWidth(userLogin->sizePolicy().hasHeightForWidth());
+        userLogin->setSizePolicy(sizePolicy);
+        userLogin->setMinimumSize(QSize(0, 36));
+        userLogin->setMaximumSize(QSize(16777215, 36));
+        userLogin->setFont(font1);
+        userLogin->setCheckable(true);
+        userLogin->setAutoExclusive(true);
+
+        loginOptHL->addWidget(userLogin);
+
+
+        rightWidgetVL->addWidget(loginOptWidget);
+
+        loginWidget = new QWidget(rightWidget);
+        loginWidget->setObjectName("loginWidget");
+        sizePolicy.setHeightForWidth(loginWidget->sizePolicy().hasHeightForWidth());
+        loginWidget->setSizePolicy(sizePolicy);
+        loginWidget->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
 "background-color: rgb(230, 230, 230);\n"
 "border: 1px solid rgb(228, 228, 228);\n"
 "border-radius: 18px;\n"
 "padding-left: 12px;\n"
 "color: rgb(79, 79, 79);\n"
 "}"));
-        login_layout = new QVBoxLayout(widget_4);
+        login_layout = new QVBoxLayout(loginWidget);
         login_layout->setSpacing(24);
         login_layout->setObjectName("login_layout");
         login_layout->setContentsMargins(0, 0, 0, 0);
-        login_title = new QLabel(widget_4);
+        login_title = new QLabel(loginWidget);
         login_title->setObjectName("login_title");
         sizePolicy.setHeightForWidth(login_title->sizePolicy().hasHeightForWidth());
         login_title->setSizePolicy(sizePolicy);
-        QFont font1;
-        font1.setPointSize(12);
-        font1.setWeight(QFont::DemiBold);
-        login_title->setFont(font1);
+        QFont font2;
+        font2.setPointSize(12);
+        font2.setWeight(QFont::DemiBold);
+        login_title->setFont(font2);
         login_title->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color: black;\n"
 "}"));
@@ -155,7 +233,7 @@ public:
 
         login_layout->addWidget(login_title);
 
-        username_le = new QLineEdit(widget_4);
+        username_le = new QLineEdit(loginWidget);
         username_le->setObjectName("username_le");
         sizePolicy.setHeightForWidth(username_le->sizePolicy().hasHeightForWidth());
         username_le->setSizePolicy(sizePolicy);
@@ -196,9 +274,9 @@ public:
         palette.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush2);
 #endif
         username_le->setPalette(palette);
-        QFont font2;
-        font2.setPointSize(11);
-        username_le->setFont(font2);
+        QFont font3;
+        font3.setPointSize(11);
+        username_le->setFont(font3);
         username_le->setToolTipDuration(-1);
         username_le->setStyleSheet(QString::fromUtf8(""));
         username_le->setFrame(true);
@@ -207,7 +285,7 @@ public:
 
         login_layout->addWidget(username_le);
 
-        password_le = new QLineEdit(widget_4);
+        password_le = new QLineEdit(loginWidget);
         password_le->setObjectName("password_le");
         sizePolicy.setHeightForWidth(password_le->sizePolicy().hasHeightForWidth());
         password_le->setSizePolicy(sizePolicy);
@@ -242,17 +320,17 @@ public:
         palette1.setBrush(QPalette::Disabled, QPalette::PlaceholderText, brush2);
 #endif
         password_le->setPalette(palette1);
-        password_le->setFont(font2);
+        password_le->setFont(font3);
 
         login_layout->addWidget(password_le);
 
-        login_btn = new QPushButton(widget_4);
+        login_btn = new QPushButton(loginWidget);
         login_btn->setObjectName("login_btn");
         sizePolicy.setHeightForWidth(login_btn->sizePolicy().hasHeightForWidth());
         login_btn->setSizePolicy(sizePolicy);
         login_btn->setMinimumSize(QSize(100, 36));
         login_btn->setMaximumSize(QSize(100, 36));
-        login_btn->setFont(font1);
+        login_btn->setFont(font2);
         login_btn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(111, 181, 83);\n"
@@ -271,10 +349,14 @@ public:
         login_layout->addWidget(login_btn);
 
 
-        gridLayout_2->addWidget(widget_4, 0, 0, 1, 1);
+        rightWidgetVL->addWidget(loginWidget);
+
+        verticalSpacer_2 = new QSpacerItem(20, 224, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
+
+        rightWidgetVL->addItem(verticalSpacer_2);
 
 
-        horizontalLayout->addWidget(widget_2);
+        horizontalLayout->addWidget(rightWidget);
 
         horizontalLayout->setStretch(0, 1);
         horizontalLayout->setStretch(1, 1);
@@ -287,8 +369,10 @@ public:
 
     void retranslateUi(QMainWindow *LoginPage)
     {
-        LoginPage->setWindowTitle(QCoreApplication::translate("LoginPage", "MainWindow", nullptr));
+        LoginPage->setWindowTitle(QCoreApplication::translate("LoginPage", "Library Management System", nullptr));
         label->setText(QCoreApplication::translate("LoginPage", "Library Management System", nullptr));
+        adminLogin->setText(QCoreApplication::translate("LoginPage", "Admin Login", nullptr));
+        userLogin->setText(QCoreApplication::translate("LoginPage", "User Login", nullptr));
         login_title->setText(QCoreApplication::translate("LoginPage", "Admin Login", nullptr));
         username_le->setInputMask(QString());
         username_le->setPlaceholderText(QCoreApplication::translate("LoginPage", "Username", nullptr));

@@ -61,7 +61,8 @@ public:
     QWidget *top_bar;
     QHBoxLayout *topBarHL;
     QPushButton *menu_btn;
-    QSpacerItem *horizontalSpacer;
+    QLabel *title_label;
+    QSpacerItem *horizontalSpacer_1;
     QLineEdit *search_le;
     QSpacerItem *horizontalSpacer_2;
     QPushButton *notification_btn;
@@ -80,6 +81,14 @@ public:
     QGridLayout *publicationGL;
     QWidget *books;
     QGridLayout *booksGL;
+    QWidget *book_issue;
+    QVBoxLayout *bookIssueVL;
+    QWidget *book_request;
+    QVBoxLayout *bookReqVL;
+    QWidget *reg_stud;
+    QVBoxLayout *regStudVL;
+    QWidget *report;
+    QVBoxLayout *reportVL;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -462,7 +471,7 @@ public:
         body = new QWidget();
         body->setObjectName("body");
         body->setGeometry(QRect(0, 0, 822, 686));
-        body->setStyleSheet(QString::fromUtf8("background-color: rgb(243, 244, 248);"));
+        body->setStyleSheet(QString::fromUtf8(""));
         verticalLayout = new QVBoxLayout(body);
         verticalLayout->setSpacing(8);
         verticalLayout->setObjectName("verticalLayout");
@@ -508,9 +517,16 @@ public:
 
         topBarHL->addWidget(menu_btn);
 
-        horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        title_label = new QLabel(top_bar);
+        title_label->setObjectName("title_label");
+        title_label->setFont(font1);
+        title_label->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
 
-        topBarHL->addItem(horizontalSpacer);
+        topBarHL->addWidget(title_label);
+
+        horizontalSpacer_1 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+
+        topBarHL->addItem(horizontalSpacer_1);
 
         search_le = new QLineEdit(top_bar);
         search_le->setObjectName("search_le");
@@ -614,9 +630,7 @@ public:
 
         stackedWidget = new QStackedWidget(body);
         stackedWidget->setObjectName("stackedWidget");
-        stackedWidget->setStyleSheet(QString::fromUtf8("QWidget{\n"
-"background-color: rgb(243, 244, 248);\n"
-"}"));
+        stackedWidget->setStyleSheet(QString::fromUtf8(""));
         dashboard = new QWidget();
         dashboard->setObjectName("dashboard");
         dashboard->setStyleSheet(QString::fromUtf8(""));
@@ -647,6 +661,34 @@ public:
         booksGL->setObjectName("booksGL");
         booksGL->setContentsMargins(0, 0, 0, 0);
         stackedWidget->addWidget(books);
+        book_issue = new QWidget();
+        book_issue->setObjectName("book_issue");
+        bookIssueVL = new QVBoxLayout(book_issue);
+        bookIssueVL->setSpacing(0);
+        bookIssueVL->setObjectName("bookIssueVL");
+        bookIssueVL->setContentsMargins(0, 0, 0, 0);
+        stackedWidget->addWidget(book_issue);
+        book_request = new QWidget();
+        book_request->setObjectName("book_request");
+        bookReqVL = new QVBoxLayout(book_request);
+        bookReqVL->setSpacing(0);
+        bookReqVL->setObjectName("bookReqVL");
+        bookReqVL->setContentsMargins(0, 0, 0, 0);
+        stackedWidget->addWidget(book_request);
+        reg_stud = new QWidget();
+        reg_stud->setObjectName("reg_stud");
+        regStudVL = new QVBoxLayout(reg_stud);
+        regStudVL->setSpacing(0);
+        regStudVL->setObjectName("regStudVL");
+        regStudVL->setContentsMargins(0, 0, 0, 0);
+        stackedWidget->addWidget(reg_stud);
+        report = new QWidget();
+        report->setObjectName("report");
+        reportVL = new QVBoxLayout(report);
+        reportVL->setSpacing(0);
+        reportVL->setObjectName("reportVL");
+        reportVL->setContentsMargins(0, -1, 0, 0);
+        stackedWidget->addWidget(report);
 
         verticalLayout->addWidget(stackedWidget);
 
@@ -677,7 +719,7 @@ public:
         QObject::connect(menu_btn, &QPushButton::toggled, sidebar_2, &QWidget::setVisible);
 
         dashboardBtn_2->setDefault(false);
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(7);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -705,6 +747,7 @@ public:
         regBtn_2->setText(QCoreApplication::translate("MainWindow", "  Reg. Student", nullptr));
         reportBtn_2->setText(QCoreApplication::translate("MainWindow", "  Report", nullptr));
         menu_btn->setText(QString());
+        title_label->setText(QCoreApplication::translate("MainWindow", "Dashboard", nullptr));
         search_le->setPlaceholderText(QCoreApplication::translate("MainWindow", "Search", nullptr));
         notification_btn->setText(QString());
         name_label->setText(QCoreApplication::translate("MainWindow", "Sagar Gupta", nullptr));

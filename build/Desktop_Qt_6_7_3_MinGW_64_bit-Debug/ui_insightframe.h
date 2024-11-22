@@ -31,7 +31,7 @@ public:
     QVBoxLayout *headerVL;
     QLabel *header;
     QLabel *userNum;
-    QLabel *IinsightIcon;
+    QLabel *InsightIcon;
 
     void setupUi(QWidget *InsightFrame)
     {
@@ -80,7 +80,7 @@ public:
         innerFrame->setFrameShape(QFrame::Shape::StyledPanel);
         innerFrame->setFrameShadow(QFrame::Shadow::Raised);
         horizontalLayout = new QHBoxLayout(innerFrame);
-        horizontalLayout->setSpacing(16);
+        horizontalLayout->setSpacing(24);
         horizontalLayout->setObjectName("horizontalLayout");
         horizontalLayout->setContentsMargins(12, 0, 12, 0);
         headerVL = new QVBoxLayout();
@@ -91,9 +91,9 @@ public:
         sizePolicy2.setHeightForWidth(header->sizePolicy().hasHeightForWidth());
         header->setSizePolicy(sizePolicy2);
         QFont font;
-        font.setFamilies({QString::fromUtf8("Poppins")});
+        font.setFamilies({QString::fromUtf8("Poppins SemiBold")});
         font.setPointSize(14);
-        font.setBold(true);
+        font.setBold(false);
         header->setFont(font);
 
         headerVL->addWidget(header);
@@ -112,17 +112,17 @@ public:
 
         horizontalLayout->addLayout(headerVL);
 
-        IinsightIcon = new QLabel(innerFrame);
-        IinsightIcon->setObjectName("IinsightIcon");
-        sizePolicy2.setHeightForWidth(IinsightIcon->sizePolicy().hasHeightForWidth());
-        IinsightIcon->setSizePolicy(sizePolicy2);
-        IinsightIcon->setMinimumSize(QSize(48, 48));
-        IinsightIcon->setMaximumSize(QSize(48, 48));
-        IinsightIcon->setPixmap(QPixmap(QString::fromUtf8(":/icons/res/icon/books.png")));
-        IinsightIcon->setScaledContents(true);
-        IinsightIcon->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
+        InsightIcon = new QLabel(innerFrame);
+        InsightIcon->setObjectName("InsightIcon");
+        sizePolicy2.setHeightForWidth(InsightIcon->sizePolicy().hasHeightForWidth());
+        InsightIcon->setSizePolicy(sizePolicy2);
+        InsightIcon->setMinimumSize(QSize(64, 64));
+        InsightIcon->setMaximumSize(QSize(64, 64));
+        InsightIcon->setPixmap(QPixmap(QString::fromUtf8(":/icons/res/icon/books.png")));
+        InsightIcon->setScaledContents(true);
+        InsightIcon->setAlignment(Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter);
 
-        horizontalLayout->addWidget(IinsightIcon);
+        horizontalLayout->addWidget(InsightIcon);
 
 
         horizontalLayout_2->addWidget(innerFrame);
@@ -141,7 +141,7 @@ public:
         InsightFrame->setWindowTitle(QCoreApplication::translate("InsightFrame", "Form", nullptr));
         header->setText(QCoreApplication::translate("InsightFrame", "Total Users", nullptr));
         userNum->setText(QCoreApplication::translate("InsightFrame", "1", nullptr));
-        IinsightIcon->setText(QString());
+        InsightIcon->setText(QString());
     } // retranslateUi
 
 };

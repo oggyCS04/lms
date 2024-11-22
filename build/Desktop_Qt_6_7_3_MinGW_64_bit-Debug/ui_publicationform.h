@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -21,7 +20,6 @@
 #include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QSpinBox>
-#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTableWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -32,41 +30,29 @@ class Ui_PublicationFragment
 {
 public:
     QVBoxLayout *verticalLayout;
-    QWidget *pubHeader;
-    QHBoxLayout *pubHeaderHL;
-    QPushButton *addPubBtn;
-    QPushButton *managePubBtn;
-    QSpacerItem *pubSpacer;
-    QStackedWidget *pubStackedWidget;
-    QWidget *addPubWidget;
-    QGridLayout *pubAddGL;
-    QFrame *pubFrame;
-    QVBoxLayout *verticalLayout_4;
-    QLabel *pubInfoQL;
-    QLabel *pubNameQL;
-    QLineEdit *pubLE;
-    QPushButton *pubAddBtn;
-    QWidget *managePubWidget;
-    QGridLayout *pubManageGL;
-    QScrollArea *pubScrollArea;
-    QWidget *pubContents;
-    QGridLayout *pubContentsGL;
-    QWidget *pubWidget;
-    QVBoxLayout *verticalLayout_7;
-    QLabel *label_11;
-    QHBoxLayout *horizontalLayout_11;
-    QSpinBox *spinBox_3;
-    QLabel *label_12;
-    QSpacerItem *horizontalSpacer_9;
-    QLabel *label_13;
-    QLineEdit *lineEdit_3;
-    QTableWidget *tableWidget_3;
-    QHBoxLayout *horizontalLayout_12;
-    QLabel *label_14;
-    QSpacerItem *horizontalSpacer_10;
-    QPushButton *pushButton_5;
-    QLabel *label_15;
-    QPushButton *pushButton_6;
+    QWidget *publication_header;
+    QHBoxLayout *horizontalLayout_3;
+    QPushButton *addPublicationBtn;
+    QSpacerItem *publicationSpacer;
+    QScrollArea *manageCatScrollArea_2;
+    QWidget *manageCatContents_2;
+    QGridLayout *gridLayout_4;
+    QWidget *manageCatWidget_2;
+    QVBoxLayout *verticalLayout_6;
+    QLabel *label_3;
+    QHBoxLayout *horizontalLayout_9;
+    QSpinBox *spinBox_2;
+    QLabel *label_4;
+    QSpacerItem *horizontalSpacer_7;
+    QLabel *label_8;
+    QLineEdit *lineEdit_2;
+    QTableWidget *tableWidget;
+    QHBoxLayout *horizontalLayout_10;
+    QLabel *label_9;
+    QSpacerItem *horizontalSpacer_8;
+    QPushButton *pushButton_3;
+    QLabel *label_10;
+    QPushButton *pushButton_4;
 
     void setupUi(QWidget *PublicationFragment)
     {
@@ -78,337 +64,246 @@ public:
         verticalLayout->setSpacing(0);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        pubHeader = new QWidget(PublicationFragment);
-        pubHeader->setObjectName("pubHeader");
-        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Fixed);
+        publication_header = new QWidget(PublicationFragment);
+        publication_header->setObjectName("publication_header");
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(pubHeader->sizePolicy().hasHeightForWidth());
-        pubHeader->setSizePolicy(sizePolicy);
-        pubHeader->setMinimumSize(QSize(0, 64));
-        pubHeader->setMaximumSize(QSize(16777215, 64));
-        pubHeader->setStyleSheet(QString::fromUtf8("QWidget{\n"
-"border-bottom: 1px solid lightgray;\n"
-"}\n"
-"\n"
-"QPushButton{\n"
-"color: black;\n"
-"background-color: rgb(255, 255, 255);\n"
-"border: 1px solid white;\n"
+        sizePolicy.setHeightForWidth(publication_header->sizePolicy().hasHeightForWidth());
+        publication_header->setSizePolicy(sizePolicy);
+        publication_header->setMinimumSize(QSize(0, 0));
+        publication_header->setMaximumSize(QSize(16777215, 16777215));
+        publication_header->setStyleSheet(QString::fromUtf8(""));
+        horizontalLayout_3 = new QHBoxLayout(publication_header);
+        horizontalLayout_3->setSpacing(7);
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        horizontalLayout_3->setContentsMargins(48, 8, 0, 8);
+        addPublicationBtn = new QPushButton(publication_header);
+        addPublicationBtn->setObjectName("addPublicationBtn");
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(addPublicationBtn->sizePolicy().hasHeightForWidth());
+        addPublicationBtn->setSizePolicy(sizePolicy1);
+        QFont font;
+        font.setPointSize(11);
+        font.setWeight(QFont::DemiBold);
+        addPublicationBtn->setFont(font);
+        addPublicationBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+"color: white;\n"
+"background-color: rgb(6, 106, 254);\n"
+"border: 1px solid rgb(6, 106, 254);\n"
 "padding: 10px;\n"
 "border-radius: 12px;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"background-color: #ebebeb;\n"
-"border: 1px solid rgb(236, 236, 236);\n"
+"background-color: rgb(0, 105, 217);\n"
+"border: 1px solid rgb(0, 105, 217);\n"
 "}\n"
-"\n"
-"QPushButton:checked{\n"
-"color: white;\n"
-"background-color: black;\n"
-"}"));
-        pubHeaderHL = new QHBoxLayout(pubHeader);
-        pubHeaderHL->setSpacing(11);
-        pubHeaderHL->setObjectName("pubHeaderHL");
-        addPubBtn = new QPushButton(pubHeader);
-        addPubBtn->setObjectName("addPubBtn");
-        QSizePolicy sizePolicy1(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Fixed);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(addPubBtn->sizePolicy().hasHeightForWidth());
-        addPubBtn->setSizePolicy(sizePolicy1);
-        QFont font;
-        font.setPointSize(11);
-        font.setWeight(QFont::DemiBold);
-        addPubBtn->setFont(font);
-        addPubBtn->setCheckable(true);
-        addPubBtn->setChecked(true);
-        addPubBtn->setAutoExclusive(true);
-
-        pubHeaderHL->addWidget(addPubBtn);
-
-        managePubBtn = new QPushButton(pubHeader);
-        managePubBtn->setObjectName("managePubBtn");
-        sizePolicy1.setHeightForWidth(managePubBtn->sizePolicy().hasHeightForWidth());
-        managePubBtn->setSizePolicy(sizePolicy1);
-        managePubBtn->setFont(font);
-        managePubBtn->setCheckable(true);
-        managePubBtn->setChecked(false);
-        managePubBtn->setAutoExclusive(true);
-
-        pubHeaderHL->addWidget(managePubBtn);
-
-        pubSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
-
-        pubHeaderHL->addItem(pubSpacer);
-
-
-        verticalLayout->addWidget(pubHeader);
-
-        pubStackedWidget = new QStackedWidget(PublicationFragment);
-        pubStackedWidget->setObjectName("pubStackedWidget");
-        addPubWidget = new QWidget();
-        addPubWidget->setObjectName("addPubWidget");
-        pubAddGL = new QGridLayout(addPubWidget);
-        pubAddGL->setSpacing(0);
-        pubAddGL->setObjectName("pubAddGL");
-        pubAddGL->setContentsMargins(0, 0, 0, 0);
-        pubFrame = new QFrame(addPubWidget);
-        pubFrame->setObjectName("pubFrame");
-        QSizePolicy sizePolicy2(QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Maximum);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(pubFrame->sizePolicy().hasHeightForWidth());
-        pubFrame->setSizePolicy(sizePolicy2);
-        pubFrame->setMinimumSize(QSize(500, 0));
-        pubFrame->setMaximumSize(QSize(500, 16777215));
-        pubFrame->setStyleSheet(QString::fromUtf8("\n"
-"\n"
-"QFrame{\n"
-"border: 1px solid rgb(188, 232, 241);\n"
-"border-radius: 16px;\n"
-"}\n"
-"\n"
-"QLabel{\n"
-"border: none;\n"
-"border-bottom-left-radius: 0px;\n"
-"border-bottom-right-radius: 0px;\n"
-"padding-left: 12px;\n"
-"}\n"
-"\n"
-"QLineEdit{\n"
-"color: black;\n"
-"border: 1px solid rgb(172, 172, 172);\n"
-"border-radius: 16px;\n"
-"margin-left: 12px;\n"
-"margin-right: 12px;\n"
-"padding-left: 12px;\n"
-"}\n"
-"\n"
-"QRadioButton{\n"
-"color: black;\n"
-"margin-left: 12px;\n"
-"}\n"
-"\n"
-"\n"
 ""));
-        verticalLayout_4 = new QVBoxLayout(pubFrame);
-        verticalLayout_4->setSpacing(8);
-        verticalLayout_4->setObjectName("verticalLayout_4");
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        pubInfoQL = new QLabel(pubFrame);
-        pubInfoQL->setObjectName("pubInfoQL");
-        sizePolicy.setHeightForWidth(pubInfoQL->sizePolicy().hasHeightForWidth());
-        pubInfoQL->setSizePolicy(sizePolicy);
-        pubInfoQL->setMinimumSize(QSize(0, 52));
-        pubInfoQL->setMaximumSize(QSize(16777215, 52));
-        QFont font1;
-        font1.setFamilies({QString::fromUtf8("Segoe UI")});
-        font1.setPointSize(11);
-        font1.setWeight(QFont::DemiBold);
-        pubInfoQL->setFont(font1);
-        pubInfoQL->setStyleSheet(QString::fromUtf8("QLabel{\n"
-"color: rgb(49, 112, 143);\n"
-"background-color: rgb(214, 234, 244);\n"
-"border-bottom: 1px solid  rgb(188, 232, 241);\n"
-"\n"
-"}"));
-        pubInfoQL->setMargin(3);
-        pubInfoQL->setIndent(0);
+        addPublicationBtn->setCheckable(false);
+        addPublicationBtn->setChecked(false);
+        addPublicationBtn->setAutoExclusive(false);
 
-        verticalLayout_4->addWidget(pubInfoQL);
+        horizontalLayout_3->addWidget(addPublicationBtn);
 
-        pubNameQL = new QLabel(pubFrame);
-        pubNameQL->setObjectName("pubNameQL");
-        sizePolicy.setHeightForWidth(pubNameQL->sizePolicy().hasHeightForWidth());
-        pubNameQL->setSizePolicy(sizePolicy);
-        pubNameQL->setMinimumSize(QSize(0, 36));
-        pubNameQL->setMaximumSize(QSize(16777215, 36));
-        QFont font2;
-        font2.setFamilies({QString::fromUtf8("Segoe UI Semibold")});
-        font2.setPointSize(11);
-        font2.setBold(false);
-        pubNameQL->setFont(font2);
-        pubNameQL->setStyleSheet(QString::fromUtf8("color: rgb(0, 0, 0);"));
+        publicationSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-        verticalLayout_4->addWidget(pubNameQL);
-
-        pubLE = new QLineEdit(pubFrame);
-        pubLE->setObjectName("pubLE");
-        pubLE->setMinimumSize(QSize(0, 36));
-        pubLE->setMaximumSize(QSize(16777215, 36));
-        QFont font3;
-        font3.setPointSize(10);
-        pubLE->setFont(font3);
-
-        verticalLayout_4->addWidget(pubLE);
-
-        pubAddBtn = new QPushButton(pubFrame);
-        pubAddBtn->setObjectName("pubAddBtn");
-        sizePolicy1.setHeightForWidth(pubAddBtn->sizePolicy().hasHeightForWidth());
-        pubAddBtn->setSizePolicy(sizePolicy1);
-        pubAddBtn->setMinimumSize(QSize(120, 56));
-        pubAddBtn->setMaximumSize(QSize(120, 56));
-        QFont font4;
-        font4.setPointSize(10);
-        font4.setWeight(QFont::DemiBold);
-        pubAddBtn->setFont(font4);
-        pubAddBtn->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(91, 192, 222);\n"
-"border: 1px solid rgb(91, 192, 222);\n"
-"border-radius: 16px;\n"
-"margin: 12px\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"border: 1px solid black;\n"
-"border-radius: 16px;\n"
-"}"));
-
-        verticalLayout_4->addWidget(pubAddBtn);
+        horizontalLayout_3->addItem(publicationSpacer);
 
 
-        pubAddGL->addWidget(pubFrame, 0, 0, 1, 1);
+        verticalLayout->addWidget(publication_header);
 
-        pubStackedWidget->addWidget(addPubWidget);
-        managePubWidget = new QWidget();
-        managePubWidget->setObjectName("managePubWidget");
-        pubManageGL = new QGridLayout(managePubWidget);
-        pubManageGL->setSpacing(0);
-        pubManageGL->setObjectName("pubManageGL");
-        pubManageGL->setContentsMargins(0, 0, 0, 0);
-        pubScrollArea = new QScrollArea(managePubWidget);
-        pubScrollArea->setObjectName("pubScrollArea");
-        pubScrollArea->setStyleSheet(QString::fromUtf8(""));
-        pubScrollArea->setWidgetResizable(true);
-        pubContents = new QWidget();
-        pubContents->setObjectName("pubContents");
-        pubContents->setGeometry(QRect(0, 0, 897, 500));
-        pubContents->setStyleSheet(QString::fromUtf8(""));
-        pubContentsGL = new QGridLayout(pubContents);
-        pubContentsGL->setObjectName("pubContentsGL");
-        pubContentsGL->setContentsMargins(48, 48, 48, 48);
-        pubWidget = new QWidget(pubContents);
-        pubWidget->setObjectName("pubWidget");
-        pubWidget->setStyleSheet(QString::fromUtf8("QWidget{\n"
+        manageCatScrollArea_2 = new QScrollArea(PublicationFragment);
+        manageCatScrollArea_2->setObjectName("manageCatScrollArea_2");
+        manageCatScrollArea_2->setStyleSheet(QString::fromUtf8(""));
+        manageCatScrollArea_2->setWidgetResizable(true);
+        manageCatContents_2 = new QWidget();
+        manageCatContents_2->setObjectName("manageCatContents_2");
+        manageCatContents_2->setGeometry(QRect(0, 0, 897, 502));
+        manageCatContents_2->setStyleSheet(QString::fromUtf8(""));
+        gridLayout_4 = new QGridLayout(manageCatContents_2);
+        gridLayout_4->setSpacing(0);
+        gridLayout_4->setObjectName("gridLayout_4");
+        gridLayout_4->setContentsMargins(48, 8, 48, 48);
+        manageCatWidget_2 = new QWidget(manageCatContents_2);
+        manageCatWidget_2->setObjectName("manageCatWidget_2");
+        manageCatWidget_2->setStyleSheet(QString::fromUtf8("QWidget{\n"
 "color: rgb(0, 0, 0);\n"
+"\n"
+"background-color: rgb(255, 255, 255);\n"
 "border: 1px solid lightgray;\n"
 "border-radius: 12px;\n"
 "}\n"
 "\n"
 ""));
-        verticalLayout_7 = new QVBoxLayout(pubWidget);
-        verticalLayout_7->setSpacing(0);
-        verticalLayout_7->setObjectName("verticalLayout_7");
-        verticalLayout_7->setContentsMargins(0, 0, 0, 0);
-        label_11 = new QLabel(pubWidget);
-        label_11->setObjectName("label_11");
-        sizePolicy.setHeightForWidth(label_11->sizePolicy().hasHeightForWidth());
-        label_11->setSizePolicy(sizePolicy);
-        label_11->setMinimumSize(QSize(0, 48));
-        label_11->setMaximumSize(QSize(16777215, 48));
-        label_11->setFont(font);
-        label_11->setStyleSheet(QString::fromUtf8("QLabel{\n"
+        verticalLayout_6 = new QVBoxLayout(manageCatWidget_2);
+        verticalLayout_6->setSpacing(0);
+        verticalLayout_6->setObjectName("verticalLayout_6");
+        verticalLayout_6->setContentsMargins(0, 0, 0, 0);
+        label_3 = new QLabel(manageCatWidget_2);
+        label_3->setObjectName("label_3");
+        QSizePolicy sizePolicy2(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Fixed);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(label_3->sizePolicy().hasHeightForWidth());
+        label_3->setSizePolicy(sizePolicy2);
+        label_3->setMinimumSize(QSize(0, 48));
+        label_3->setMaximumSize(QSize(16777215, 48));
+        label_3->setFont(font);
+        label_3->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color: black;\n"
-"background-color: rgb(230, 230, 230);\n"
+"background-color: rgb(243, 244, 248);\n"
 "border: 1px solid lightgray;\n"
 "padding-left: 12px;\n"
 "border-bottom-left-radius: 0px;\n"
 "border-bottom-right-radius: 0px;\n"
 "}"));
 
-        verticalLayout_7->addWidget(label_11);
+        verticalLayout_6->addWidget(label_3);
 
-        horizontalLayout_11 = new QHBoxLayout();
-        horizontalLayout_11->setSpacing(8);
-        horizontalLayout_11->setObjectName("horizontalLayout_11");
-        horizontalLayout_11->setContentsMargins(8, 8, 8, 8);
-        spinBox_3 = new QSpinBox(pubWidget);
-        spinBox_3->setObjectName("spinBox_3");
-        sizePolicy1.setHeightForWidth(spinBox_3->sizePolicy().hasHeightForWidth());
-        spinBox_3->setSizePolicy(sizePolicy1);
-        spinBox_3->setMinimumSize(QSize(72, 36));
-        spinBox_3->setMaximumSize(QSize(72, 36));
-        QFont font5;
-        font5.setPointSize(11);
-        spinBox_3->setFont(font5);
-        spinBox_3->setStyleSheet(QString::fromUtf8("\n"
-"border: 1px solid lightgray;\n"
-"border-radius: 8px;\n"
+        horizontalLayout_9 = new QHBoxLayout();
+        horizontalLayout_9->setSpacing(8);
+        horizontalLayout_9->setObjectName("horizontalLayout_9");
+        horizontalLayout_9->setContentsMargins(8, 8, 8, 8);
+        spinBox_2 = new QSpinBox(manageCatWidget_2);
+        spinBox_2->setObjectName("spinBox_2");
+        sizePolicy2.setHeightForWidth(spinBox_2->sizePolicy().hasHeightForWidth());
+        spinBox_2->setSizePolicy(sizePolicy2);
+        spinBox_2->setMinimumSize(QSize(0, 36));
+        spinBox_2->setMaximumSize(QSize(16777215, 36));
+        QFont font1;
+        font1.setPointSize(11);
+        spinBox_2->setFont(font1);
+        spinBox_2->setStyleSheet(QString::fromUtf8("QSpinBox {\n"
+"	width: 60px; /* make room for the arrows */\n"
+"    border-width: 1;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button {\n"
+"    subcontrol-origin: border;\n"
+"    subcontrol-position: top right;\n"
+"    width: 14px;\n"
+"    background-color: white;\n"
+"    border: 1px solid lightgray;\n"
+"	border-bottom-width: 0px;\n"
+"   \n"
+"}\n"
+"\n"
+"QSpinBox::up-button:hover {\n"
+"    background-color:rgb(221, 221, 221);\n"
+"}\n"
+"\n"
+"QSpinBox::up-button:pressed {\n"
+"    background-color:yellow;\n"
+"}\n"
+"\n"
+"QSpinBox::up-arrow {\n"
+"    image: url(:/icons/res/icon/arrow-up.png);\n"
+"    width: 10px;\n"
+"    height: 10px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"QSpinBox::down-button {\n"
+"    subcontrol-origin: border;\n"
+"    subcontrol-position: bottom right; \n"
+"\n"
+"    width: 14px;\n"
+"	background-color: white;\n"
+"    border: 1px solid lightgray;\n"
+"	border-top-width: 0px;\n"
+"	\n"
+"}\n"
+"\n"
+"QSpinBox::down-button:hover {\n"
+"    background-color: rgb(221, 221, 221);\n"
+"}\n"
+"\n"
+"QSpinBox::down-button:pressed {\n"
+"   ba"
+                        "ckground-color: yellow;\n"
+"}\n"
+"\n"
+"QSpinBox::down-arrow {\n"
+"    \n"
+"	image: url(:/icons/res/icon/arrow-down.png);\n"
+"    width: 10px;\n"
+"    height: 10px;\n"
+"}\n"
 ""));
-        spinBox_3->setAlignment(Qt::AlignmentFlag::AlignCenter);
-        spinBox_3->setMinimum(25);
-        spinBox_3->setMaximum(100);
-        spinBox_3->setSingleStep(25);
+        spinBox_2->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        spinBox_2->setReadOnly(false);
+        spinBox_2->setMinimum(25);
+        spinBox_2->setMaximum(100);
+        spinBox_2->setSingleStep(25);
 
-        horizontalLayout_11->addWidget(spinBox_3);
+        horizontalLayout_9->addWidget(spinBox_2);
 
-        label_12 = new QLabel(pubWidget);
-        label_12->setObjectName("label_12");
-        label_12->setFont(font5);
-        label_12->setStyleSheet(QString::fromUtf8("border:none;"));
+        label_4 = new QLabel(manageCatWidget_2);
+        label_4->setObjectName("label_4");
+        label_4->setFont(font1);
+        label_4->setStyleSheet(QString::fromUtf8("border:none;"));
 
-        horizontalLayout_11->addWidget(label_12);
+        horizontalLayout_9->addWidget(label_4);
 
-        horizontalSpacer_9 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalSpacer_7 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-        horizontalLayout_11->addItem(horizontalSpacer_9);
+        horizontalLayout_9->addItem(horizontalSpacer_7);
 
-        label_13 = new QLabel(pubWidget);
-        label_13->setObjectName("label_13");
-        label_13->setFont(font5);
-        label_13->setStyleSheet(QString::fromUtf8("border:none;"));
+        label_8 = new QLabel(manageCatWidget_2);
+        label_8->setObjectName("label_8");
+        label_8->setFont(font1);
+        label_8->setStyleSheet(QString::fromUtf8("border:none;"));
 
-        horizontalLayout_11->addWidget(label_13);
+        horizontalLayout_9->addWidget(label_8);
 
-        lineEdit_3 = new QLineEdit(pubWidget);
-        lineEdit_3->setObjectName("lineEdit_3");
-        sizePolicy1.setHeightForWidth(lineEdit_3->sizePolicy().hasHeightForWidth());
-        lineEdit_3->setSizePolicy(sizePolicy1);
-        lineEdit_3->setMinimumSize(QSize(200, 36));
-        lineEdit_3->setMaximumSize(QSize(200, 36));
-        lineEdit_3->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
+        lineEdit_2 = new QLineEdit(manageCatWidget_2);
+        lineEdit_2->setObjectName("lineEdit_2");
+        sizePolicy1.setHeightForWidth(lineEdit_2->sizePolicy().hasHeightForWidth());
+        lineEdit_2->setSizePolicy(sizePolicy1);
+        lineEdit_2->setMinimumSize(QSize(200, 36));
+        lineEdit_2->setMaximumSize(QSize(200, 36));
+        lineEdit_2->setStyleSheet(QString::fromUtf8("QLineEdit{\n"
 "border: 1px solid lightgray;\n"
 "border-radius: 8px;\n"
 "padding-left: 12px;\n"
 "color: rgb(79, 79, 79);\n"
 "}"));
 
-        horizontalLayout_11->addWidget(lineEdit_3);
+        horizontalLayout_9->addWidget(lineEdit_2);
 
 
-        verticalLayout_7->addLayout(horizontalLayout_11);
+        verticalLayout_6->addLayout(horizontalLayout_9);
 
-        tableWidget_3 = new QTableWidget(pubWidget);
-        if (tableWidget_3->columnCount() < 5)
-            tableWidget_3->setColumnCount(5);
+        tableWidget = new QTableWidget(manageCatWidget_2);
+        if (tableWidget->columnCount() < 5)
+            tableWidget->setColumnCount(5);
         QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
         __qtablewidgetitem->setFont(font);
-        tableWidget_3->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        tableWidget->setHorizontalHeaderItem(0, __qtablewidgetitem);
         QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
         __qtablewidgetitem1->setFont(font);
-        tableWidget_3->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        tableWidget->setHorizontalHeaderItem(1, __qtablewidgetitem1);
         QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
         __qtablewidgetitem2->setFont(font);
-        tableWidget_3->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        tableWidget->setHorizontalHeaderItem(2, __qtablewidgetitem2);
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
         __qtablewidgetitem3->setFont(font);
-        tableWidget_3->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        tableWidget->setHorizontalHeaderItem(3, __qtablewidgetitem3);
         QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
         __qtablewidgetitem4->setFont(font);
-        tableWidget_3->setHorizontalHeaderItem(4, __qtablewidgetitem4);
-        tableWidget_3->setObjectName("tableWidget_3");
+        tableWidget->setHorizontalHeaderItem(4, __qtablewidgetitem4);
+        tableWidget->setObjectName("tableWidget");
         QSizePolicy sizePolicy3(QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Expanding);
         sizePolicy3.setHorizontalStretch(0);
         sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(tableWidget_3->sizePolicy().hasHeightForWidth());
-        tableWidget_3->setSizePolicy(sizePolicy3);
-        tableWidget_3->setFont(font5);
-        tableWidget_3->setStyleSheet(QString::fromUtf8("QHeaderView{\n"
+        sizePolicy3.setHeightForWidth(tableWidget->sizePolicy().hasHeightForWidth());
+        tableWidget->setSizePolicy(sizePolicy3);
+        tableWidget->setFont(font1);
+        tableWidget->setStyleSheet(QString::fromUtf8("QHeaderView{\n"
 "border: none;\n"
 "border-radius:0px;\n"
 "border-bottom: 1px solid lightgray;\n"
@@ -416,63 +311,72 @@ public:
 "}\n"
 "\n"
 "QHeaderView::section{\n"
-"\n"
-"	background-color: rgb(243, 244, 248);\n"
+"background-color: rgb(243, 244, 248);\n"
 "border:none;\n"
 "border-right: 1px solid lightgray;\n"
 "}\n"
 "\n"
 "QTableWidget{\n"
 "border-radius: 0px;\n"
+"background-color: white;\n"
+"alternate-background-color: rgb(243, 244, 248);\n"
+"}\n"
+"\n"
+"QTableWidget::item {\n"
+" padding-left: 10px;\n"
+"padding-right: 10px;\n"
 "}"));
-        tableWidget_3->setLineWidth(1);
-        tableWidget_3->setMidLineWidth(0);
-        tableWidget_3->setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
-        tableWidget_3->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
-        tableWidget_3->setTextElideMode(Qt::TextElideMode::ElideRight);
-        tableWidget_3->setShowGrid(true);
-        tableWidget_3->setGridStyle(Qt::PenStyle::SolidLine);
-        tableWidget_3->setWordWrap(true);
-        tableWidget_3->setCornerButtonEnabled(true);
-        tableWidget_3->horizontalHeader()->setVisible(true);
-        tableWidget_3->horizontalHeader()->setCascadingSectionResizes(false);
-        tableWidget_3->horizontalHeader()->setMinimumSectionSize(200);
-        tableWidget_3->horizontalHeader()->setDefaultSectionSize(200);
-        tableWidget_3->horizontalHeader()->setHighlightSections(false);
-        tableWidget_3->horizontalHeader()->setProperty("showSortIndicator", QVariant(false));
-        tableWidget_3->horizontalHeader()->setStretchLastSection(true);
-        tableWidget_3->verticalHeader()->setVisible(false);
-        tableWidget_3->verticalHeader()->setMinimumSectionSize(36);
-        tableWidget_3->verticalHeader()->setDefaultSectionSize(36);
-        tableWidget_3->verticalHeader()->setStretchLastSection(false);
+        tableWidget->setLineWidth(1);
+        tableWidget->setMidLineWidth(0);
+        tableWidget->setHorizontalScrollBarPolicy(Qt::ScrollBarPolicy::ScrollBarAsNeeded);
+        tableWidget->setEditTriggers(QAbstractItemView::EditTrigger::NoEditTriggers);
+        tableWidget->setAlternatingRowColors(true);
+        tableWidget->setSelectionMode(QAbstractItemView::SelectionMode::ExtendedSelection);
+        tableWidget->setTextElideMode(Qt::TextElideMode::ElideRight);
+        tableWidget->setShowGrid(true);
+        tableWidget->setGridStyle(Qt::PenStyle::SolidLine);
+        tableWidget->setWordWrap(true);
+        tableWidget->setCornerButtonEnabled(true);
+        tableWidget->horizontalHeader()->setVisible(true);
+        tableWidget->horizontalHeader()->setCascadingSectionResizes(true);
+        tableWidget->horizontalHeader()->setMinimumSectionSize(200);
+        tableWidget->horizontalHeader()->setDefaultSectionSize(200);
+        tableWidget->horizontalHeader()->setHighlightSections(false);
+        tableWidget->horizontalHeader()->setProperty("showSortIndicator", QVariant(false));
+        tableWidget->horizontalHeader()->setStretchLastSection(true);
+        tableWidget->verticalHeader()->setVisible(false);
+        tableWidget->verticalHeader()->setCascadingSectionResizes(false);
+        tableWidget->verticalHeader()->setMinimumSectionSize(48);
+        tableWidget->verticalHeader()->setDefaultSectionSize(48);
+        tableWidget->verticalHeader()->setStretchLastSection(false);
 
-        verticalLayout_7->addWidget(tableWidget_3);
+        verticalLayout_6->addWidget(tableWidget);
 
-        horizontalLayout_12 = new QHBoxLayout();
-        horizontalLayout_12->setSpacing(0);
-        horizontalLayout_12->setObjectName("horizontalLayout_12");
-        horizontalLayout_12->setContentsMargins(8, 8, 8, 8);
-        label_14 = new QLabel(pubWidget);
-        label_14->setObjectName("label_14");
-        sizePolicy.setHeightForWidth(label_14->sizePolicy().hasHeightForWidth());
-        label_14->setSizePolicy(sizePolicy);
-        label_14->setMinimumSize(QSize(0, 36));
-        label_14->setMaximumSize(QSize(16777215, 36));
-        label_14->setFont(font5);
-        label_14->setStyleSheet(QString::fromUtf8("border:none;"));
+        horizontalLayout_10 = new QHBoxLayout();
+        horizontalLayout_10->setSpacing(0);
+        horizontalLayout_10->setObjectName("horizontalLayout_10");
+        horizontalLayout_10->setContentsMargins(8, 8, 8, 8);
+        label_9 = new QLabel(manageCatWidget_2);
+        label_9->setObjectName("label_9");
+        sizePolicy2.setHeightForWidth(label_9->sizePolicy().hasHeightForWidth());
+        label_9->setSizePolicy(sizePolicy2);
+        label_9->setMinimumSize(QSize(0, 36));
+        label_9->setMaximumSize(QSize(16777215, 36));
+        label_9->setFont(font1);
+        label_9->setStyleSheet(QString::fromUtf8("border:none;"));
 
-        horizontalLayout_12->addWidget(label_14);
+        horizontalLayout_10->addWidget(label_9);
 
-        horizontalSpacer_10 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
+        horizontalSpacer_8 = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
-        horizontalLayout_12->addItem(horizontalSpacer_10);
+        horizontalLayout_10->addItem(horizontalSpacer_8);
 
-        pushButton_5 = new QPushButton(pubWidget);
-        pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setMinimumSize(QSize(0, 36));
-        pushButton_5->setMaximumSize(QSize(16777215, 36));
-        pushButton_5->setFont(font5);
-        pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        pushButton_3 = new QPushButton(manageCatWidget_2);
+        pushButton_3->setObjectName("pushButton_3");
+        pushButton_3->setMinimumSize(QSize(0, 36));
+        pushButton_3->setMaximumSize(QSize(16777215, 36));
+        pushButton_3->setFont(font1);
+        pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "color: black;\n"
 "border: 1px solid lightgray;\n"
 "border-top-right-radius: 0px;\n"
@@ -483,35 +387,35 @@ public:
 "\n"
 "QPushButton:hover{\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"border: 1px solid black;\n"
+"background-color: rgb(10, 37, 88);\n"
+"border: 1px solid rgb(10, 37, 88);\n"
 "}"));
 
-        horizontalLayout_12->addWidget(pushButton_5);
+        horizontalLayout_10->addWidget(pushButton_3);
 
-        label_15 = new QLabel(pubWidget);
-        label_15->setObjectName("label_15");
-        sizePolicy1.setHeightForWidth(label_15->sizePolicy().hasHeightForWidth());
-        label_15->setSizePolicy(sizePolicy1);
-        label_15->setMinimumSize(QSize(32, 36));
-        label_15->setMaximumSize(QSize(32, 36));
-        label_15->setFont(font5);
-        label_15->setStyleSheet(QString::fromUtf8("QLabel{\n"
+        label_10 = new QLabel(manageCatWidget_2);
+        label_10->setObjectName("label_10");
+        sizePolicy1.setHeightForWidth(label_10->sizePolicy().hasHeightForWidth());
+        label_10->setSizePolicy(sizePolicy1);
+        label_10->setMinimumSize(QSize(32, 36));
+        label_10->setMaximumSize(QSize(32, 36));
+        label_10->setFont(font1);
+        label_10->setStyleSheet(QString::fromUtf8("QLabel{\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"border: 1px solid black;\n"
+"background-color: rgb(10, 37, 88);\n"
+"border: 1px solid rgb(10, 37, 88);\n"
 "border-radius: 0px;\n"
 "}"));
-        label_15->setAlignment(Qt::AlignmentFlag::AlignCenter);
+        label_10->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        horizontalLayout_12->addWidget(label_15);
+        horizontalLayout_10->addWidget(label_10);
 
-        pushButton_6 = new QPushButton(pubWidget);
-        pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setMinimumSize(QSize(0, 36));
-        pushButton_6->setMaximumSize(QSize(16777215, 36));
-        pushButton_6->setFont(font5);
-        pushButton_6->setStyleSheet(QString::fromUtf8("QPushButton{\n"
+        pushButton_4 = new QPushButton(manageCatWidget_2);
+        pushButton_4->setObjectName("pushButton_4");
+        pushButton_4->setMinimumSize(QSize(0, 36));
+        pushButton_4->setMaximumSize(QSize(16777215, 36));
+        pushButton_4->setFont(font1);
+        pushButton_4->setStyleSheet(QString::fromUtf8("QPushButton{\n"
 "color: black;\n"
 "border: 1px solid lightgray;\n"
 "border-top-left-radius: 0px;\n"
@@ -522,25 +426,21 @@ public:
 "\n"
 "QPushButton:hover{\n"
 "color: rgb(255, 255, 255);\n"
-"background-color: rgb(0, 0, 0);\n"
-"border: 1px solid black;\n"
+"background-color: rgb(10, 37, 88);\n"
+"border: 1px solid rgb(10, 37, 88);\n"
 "}"));
 
-        horizontalLayout_12->addWidget(pushButton_6);
+        horizontalLayout_10->addWidget(pushButton_4);
 
 
-        verticalLayout_7->addLayout(horizontalLayout_12);
+        verticalLayout_6->addLayout(horizontalLayout_10);
 
 
-        pubContentsGL->addWidget(pubWidget, 0, 0, 1, 1);
+        gridLayout_4->addWidget(manageCatWidget_2, 0, 0, 1, 1);
 
-        pubScrollArea->setWidget(pubContents);
+        manageCatScrollArea_2->setWidget(manageCatContents_2);
 
-        pubManageGL->addWidget(pubScrollArea, 0, 0, 1, 1);
-
-        pubStackedWidget->addWidget(managePubWidget);
-
-        verticalLayout->addWidget(pubStackedWidget);
+        verticalLayout->addWidget(manageCatScrollArea_2);
 
 
         retranslateUi(PublicationFragment);
@@ -551,28 +451,24 @@ public:
     void retranslateUi(QWidget *PublicationFragment)
     {
         PublicationFragment->setWindowTitle(QCoreApplication::translate("PublicationFragment", "Form", nullptr));
-        addPubBtn->setText(QCoreApplication::translate("PublicationFragment", "Add Publication", nullptr));
-        managePubBtn->setText(QCoreApplication::translate("PublicationFragment", "Manage Publications", nullptr));
-        pubInfoQL->setText(QCoreApplication::translate("PublicationFragment", "Publication Info", nullptr));
-        pubNameQL->setText(QCoreApplication::translate("PublicationFragment", "Publication Name", nullptr));
-        pubAddBtn->setText(QCoreApplication::translate("PublicationFragment", "Add", nullptr));
-        label_11->setText(QCoreApplication::translate("PublicationFragment", "Publications Listing", nullptr));
-        label_12->setText(QCoreApplication::translate("PublicationFragment", "records per page", nullptr));
-        label_13->setText(QCoreApplication::translate("PublicationFragment", "Search :", nullptr));
-        QTableWidgetItem *___qtablewidgetitem = tableWidget_3->horizontalHeaderItem(0);
+        addPublicationBtn->setText(QCoreApplication::translate("PublicationFragment", "Add New", nullptr));
+        label_3->setText(QCoreApplication::translate("PublicationFragment", "Publications Listing", nullptr));
+        label_4->setText(QCoreApplication::translate("PublicationFragment", "records per page", nullptr));
+        label_8->setText(QCoreApplication::translate("PublicationFragment", "Search :", nullptr));
+        QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("PublicationFragment", "S.No.", nullptr));
-        QTableWidgetItem *___qtablewidgetitem1 = tableWidget_3->horizontalHeaderItem(1);
+        QTableWidgetItem *___qtablewidgetitem1 = tableWidget->horizontalHeaderItem(1);
         ___qtablewidgetitem1->setText(QCoreApplication::translate("PublicationFragment", "Publication", nullptr));
-        QTableWidgetItem *___qtablewidgetitem2 = tableWidget_3->horizontalHeaderItem(2);
+        QTableWidgetItem *___qtablewidgetitem2 = tableWidget->horizontalHeaderItem(2);
         ___qtablewidgetitem2->setText(QCoreApplication::translate("PublicationFragment", "Creation Date", nullptr));
-        QTableWidgetItem *___qtablewidgetitem3 = tableWidget_3->horizontalHeaderItem(3);
+        QTableWidgetItem *___qtablewidgetitem3 = tableWidget->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QCoreApplication::translate("PublicationFragment", "Updation Date", nullptr));
-        QTableWidgetItem *___qtablewidgetitem4 = tableWidget_3->horizontalHeaderItem(4);
+        QTableWidgetItem *___qtablewidgetitem4 = tableWidget->horizontalHeaderItem(4);
         ___qtablewidgetitem4->setText(QCoreApplication::translate("PublicationFragment", "Action", nullptr));
-        label_14->setText(QCoreApplication::translate("PublicationFragment", "Showing", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("PublicationFragment", "Previous", nullptr));
-        label_15->setText(QCoreApplication::translate("PublicationFragment", "1", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("PublicationFragment", "Next", nullptr));
+        label_9->setText(QCoreApplication::translate("PublicationFragment", "Showing", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("PublicationFragment", "Previous", nullptr));
+        label_10->setText(QCoreApplication::translate("PublicationFragment", "1", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("PublicationFragment", "Next", nullptr));
     } // retranslateUi
 
 };

@@ -13,8 +13,10 @@ DatabaseConnector::DatabaseConnector() {
     } else {
         qDebug() << "Database connection established successfully!";
     }
+
 }
 
 DatabaseConnector::~DatabaseConnector() {
-
+    db.close();
+    QSqlDatabase::removeDatabase("lms_thapathali");
 }

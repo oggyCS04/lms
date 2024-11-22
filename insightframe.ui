@@ -123,7 +123,7 @@ border-radius: 16px;
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <property name="spacing">
-          <number>16</number>
+          <number>24</number>
          </property>
          <property name="leftMargin">
           <number>12</number>
@@ -152,9 +152,9 @@ border-radius: 16px;
              </property>
              <property name="font">
               <font>
-               <family>Poppins</family>
+               <family>Poppins SemiBold</family>
                <pointsize>14</pointsize>
-               <bold>true</bold>
+               <bold>false</bold>
               </font>
              </property>
              <property name="text">
@@ -184,7 +184,7 @@ border-radius: 16px;
           </layout>
          </item>
          <item>
-          <widget class="QLabel" name="IinsightIcon">
+          <widget class="QLabel" name="InsightIcon">
            <property name="sizePolicy">
             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
              <horstretch>0</horstretch>
@@ -193,14 +193,14 @@ border-radius: 16px;
            </property>
            <property name="minimumSize">
             <size>
-             <width>48</width>
-             <height>48</height>
+             <width>64</width>
+             <height>64</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>48</width>
-             <height>48</height>
+             <width>64</width>
+             <height>64</height>
             </size>
            </property>
            <property name="text">

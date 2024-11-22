@@ -23,6 +23,8 @@ public:
     QVBoxLayout *dashboardFragmentVL;
     QWidget *topWidget;
     QHBoxLayout *topWidgetHL;
+    QWidget *bodyWidget;
+    QHBoxLayout *horizontalLayout;
 
     void setupUi(QWidget *DashboardFragment)
     {
@@ -50,6 +52,22 @@ public:
         topWidgetHL->setContentsMargins(24, 0, 24, 0);
 
         dashboardFragmentVL->addWidget(topWidget);
+
+        bodyWidget = new QWidget(DashboardFragment);
+        bodyWidget->setObjectName("bodyWidget");
+        QSizePolicy sizePolicy1(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(bodyWidget->sizePolicy().hasHeightForWidth());
+        bodyWidget->setSizePolicy(sizePolicy1);
+        bodyWidget->setMinimumSize(QSize(0, 0));
+        bodyWidget->setMaximumSize(QSize(16777215, 16777215));
+        horizontalLayout = new QHBoxLayout(bodyWidget);
+        horizontalLayout->setSpacing(24);
+        horizontalLayout->setObjectName("horizontalLayout");
+        horizontalLayout->setContentsMargins(24, 24, 24, 24);
+
+        dashboardFragmentVL->addWidget(bodyWidget);
 
 
         retranslateUi(DashboardFragment);

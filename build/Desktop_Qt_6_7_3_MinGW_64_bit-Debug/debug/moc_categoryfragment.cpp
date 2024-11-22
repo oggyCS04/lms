@@ -38,8 +38,10 @@ constexpr auto qt_meta_stringdata_CLASSCategoryFragmentENDCLASS = QtMocHelpers::
     "CategoryFragment",
     "on_addCategoryBtn_clicked",
     "",
-    "on_manageCategoryBtn_clicked",
-    "on_categoryDataBtn_clicked"
+    "onEditBtnClicked",
+    "index1",
+    "onDeleteBtnClicked",
+    "index2"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -61,13 +63,13 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSCategoryFragmentENDCLASS[] = {
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
        1,    0,   32,    2, 0x08,    1 /* Private */,
-       3,    0,   33,    2, 0x08,    2 /* Private */,
-       4,    0,   34,    2, 0x08,    3 /* Private */,
+       3,    1,   33,    2, 0x08,    2 /* Private */,
+       5,    1,   36,    2, 0x08,    4 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    4,
+    QMetaType::Void, QMetaType::Int,    6,
 
        0        // eod
 };
@@ -83,10 +85,12 @@ Q_CONSTINIT const QMetaObject CategoryFragment::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<CategoryFragment, std::true_type>,
         // method 'on_addCategoryBtn_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_manageCategoryBtn_clicked'
+        // method 'onEditBtnClicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_categoryDataBtn_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
+        // method 'onDeleteBtnClicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>
     >,
     nullptr
 } };
@@ -98,12 +102,11 @@ void CategoryFragment::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         (void)_t;
         switch (_id) {
         case 0: _t->on_addCategoryBtn_clicked(); break;
-        case 1: _t->on_manageCategoryBtn_clicked(); break;
-        case 2: _t->on_categoryDataBtn_clicked(); break;
+        case 1: _t->onEditBtnClicked((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 2: _t->onDeleteBtnClicked((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *CategoryFragment::metaObject() const

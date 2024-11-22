@@ -2,9 +2,12 @@
 #define MAINWINDOW_H
 
 #include "dashboardfragment.h"
-#include "bookfragment.h"
 #include "categoryfragment.h"
 #include "publicationfragment.h"
+#include "bookfragment.h"
+#include "bookissuefragment.h"
+#include "reqbookfragment.h"
+#include "regstudfragment.h"
 
 #include <QMainWindow>
 #include <QPushButton>
@@ -24,8 +27,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+
 private slots:
     void onMenuButtonClicked(int index);
+
+    void on_profile_btn_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -34,6 +40,9 @@ private:
     CategoryFragment *categoryWidget;
     PublicationFragment *publicationWidget;
     BookFragment *bookWidget;
+    BookIssueFragment *bookIssueWidget;
+    ReqBookFragment *reqBookWidget;
+    RegStudFragment *regStudWidget;
 
     void applyDropShadow(QWidget*);
 

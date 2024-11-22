@@ -14,6 +14,12 @@ class BookFragment : public QWidget
 public:
     explicit BookFragment(QWidget *parent = nullptr);
     ~BookFragment();
+    void loadData();
+
+private slots:
+    void on_addBookBtn_clicked();
+    void onEditBtnClicked(int index1);
+    void onDeleteBtnClicked(int index2);
 
 private:
     Ui::BookFragment *ui;

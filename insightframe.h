@@ -16,6 +16,9 @@ public:
     ~InsightFrame();
 
     void setHeaderText(QString);
+    void setUserNum(QString);
+    void setInsightIcon(QString);
+
 
 private:
     Ui::InsightFrame *ui;
