@@ -1,5 +1,4 @@
-Library Management System
-developed by Sagar Gupta
+Library Management System\n BCT 3rd sem OOP Project using c++ \n developed by Sagar Gupta
 
 Login Page:
 
